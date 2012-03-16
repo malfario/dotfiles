@@ -28,13 +28,17 @@ plugins=(git osx brew lein rvm)
 
 source $ZSH/oh-my-zsh.sh
 
+bindkey -v
+unsetopt nomatch
+
 # Customize to your needs...
 if [[ -r ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
 
 if [[ -r ~/.zsh_aliases ]]; then
-  source ~/.zsh_aliases
+  . ~/.zsh_aliases
 fi
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
