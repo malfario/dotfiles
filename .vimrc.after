@@ -1,6 +1,7 @@
 set background=dark
 colorscheme desertEx
 
+" Vimclojure config
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
@@ -17,6 +18,8 @@ map <leader>te :tabe %%
 call vimclojure#MapPlug("n", "et", "EvalToplevel")
 call vimclojure#MapPlug("n", "rt", "RunTests")
 
+" Needed for textobj-rubyblock
 runtime macros/matchit.vim
 
-nnoremap <esc> :noh<return><esc>
+" Hit return to clean highlighting after search
+nnoremap <CR> :noh<CR><CR>
