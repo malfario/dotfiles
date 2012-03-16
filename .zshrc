@@ -28,7 +28,8 @@ plugins=(git osx brew lein rvm)
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey -v
+bindkey -v # Use vi-mode
+bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
 unsetopt nomatch
 
 # Customize to your needs...
