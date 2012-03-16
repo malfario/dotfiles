@@ -1,0 +1,5 @@
+# Local config
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/scala/bin:/usr/local/maven/bin:/usr/local/groovy/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/mirah/bin:/usr/local/mysql/bin:~/.lein/bin:~/.iclojure:~/.reply/bin:~/dev/android-sdk-macosx/tools
+
+# Open dir as sublime text 2 project
+alias sublp="subl --project"

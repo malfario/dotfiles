@@ -8,6 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="robbyrussell"
 export ZSH_THEME="clean"
 
+export EDITOR="vim"
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -27,11 +29,9 @@ plugins=(git osx brew lein rvm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/scala/bin:/usr/local/maven/bin:/usr/local/groovy/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/mirah/bin:/usr/local/mysql/bin:~/.lein/bin:~/.iclojure:~/.reply/bin:~/dev/android-sdk-macosx/tools
-
-alias sublp="subl --project"
-
-export EDITOR="vim"
+if [[ -r ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi
 
 if [[ -r ~/.zsh_aliases ]]; then
   source ~/.zsh_aliases
