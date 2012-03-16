@@ -1,0 +1,10 @@
+alias ll = "ls -lh"
+alias la="ls -a"
+alias lla="ls -la"
+
+# git
+alias gco="git checkout"
+alias gci="git commit"
+alias gst="git status"
+alias gb="git branch"
+alias gh="log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"

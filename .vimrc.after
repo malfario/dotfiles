@@ -1,0 +1,22 @@
+set background=dark
+colorscheme desertEx
+
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . "/.janus/VimClojure/lib/vimclojure-nailgun-client/ng"
+
+" Resolve vimclojure mappings
+unmap <leader>et
+unmap <leader>rt
+map <leader>te :tabe %%
+
+call vimclojure#MapPlug("n", "et", "EvalToplevel")
+call vimclojure#MapPlug("n", "rt", "RunTests")
+
+runtime macros/matchit.vim
+
+nnoremap <esc> :noh<return><esc>
