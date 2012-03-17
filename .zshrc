@@ -33,12 +33,10 @@ bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
 unsetopt nomatch
 
 # Customize to your needs...
-if [[ -r ~/.zshrc_local ]]; then
-  source ~/.zshrc_local
-fi
+source ~/.zshrc-local
 
-if [[ -r ~/.zsh_aliases ]]; then
-  . ~/.zsh_aliases
+if [[ -r ~/.zsh-aliases ]]; then
+  . ~/.zsh-aliases
 fi
 
 
