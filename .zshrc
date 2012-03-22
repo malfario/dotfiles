@@ -30,14 +30,35 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -v # Use vi-mode
 bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
+
+# Bind C-R to incremental reverse search in vi-mode
+# One may still use vi-history-search-backward with <Esc>/<search text><Enter> + [n|N]
+bindkey -M vicmd '^R' history-incremental-search-backward
+
 unsetopt nomatch
 
-# Customize to your needs...
+# Set cursor shape to vertical bar on insert mode
+function zle-line-init {
+  zle -K viins
+}
+
+function zle-line-init zle-keymap-select {
+  if [ $KEYMAP = vicmd ]; then
+    echo -ne "\033]50;CursorShape=2\a"
+  else
+    echo -ne "\033]50;CursorShape=0\a"
+  fi
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# Load local profile settings and aliases
 source ~/.zshrc-local
 
-if [[ -r ~/.zsh-aliases ]]; then
+if [[ -f ~/.zsh-aliases ]]; then
   . ~/.zsh-aliases
 fi
 
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
