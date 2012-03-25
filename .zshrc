@@ -50,8 +50,8 @@ function zle-line-init zle-keymap-select {
   fi
 }
 
-zle -N zle-line-init
-zle -N zle-keymap-select
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 # Load local profile settings and aliases
 source ~/.zshrc-local
