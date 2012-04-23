@@ -12,8 +12,8 @@ unmap <leader>et
 unmap <leader>rt
 map <leader>te :tabe %%
 
-call vimclojure#MapPlug("n", "et", "EvalToplevel")
-call vimclojure#MapPlug("n", "rt", "RunTests")
+au BufRead,BufNewFile *.clj nmap et <Plug>ClojureEvalToplevel
+au BufRead,BufNewFile *.clj nmap rt <Plug>ClojureRunTests
 
 " Needed for textobj-rubyblock
 runtime macros/matchit.vim
