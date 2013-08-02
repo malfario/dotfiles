@@ -1,3 +1,6 @@
+" Load vim plugins
+execute pathogen#infect()
+
 " Use tmux in screen.vim
 let g:ScreenImpl = 'Tmux'
 
