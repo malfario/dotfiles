@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #export ZSH_THEME="robbyrussell"
-export ZSH_THEME="clean"
+export ZSH_THEME="daveverwer"
 
 export EDITOR="vim"
 
