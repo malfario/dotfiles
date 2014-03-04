@@ -9,6 +9,9 @@ let g:ScreenImpl = 'Tmux'
 " Hit return to clean highlighting after search
 nnoremap <CR> :noh<CR><CR>
 
+" Press F2 to show YankRing buffer
+nnoremap <silent><F2> :YRShow<CR>
+
 " Escape with jj
 inoremap jj <Esc>
 
@@ -184,3 +187,5 @@ let g:Powerline_symbols = 'fancy'
 let g:ctrlp_open_new_file = 't'
 " c-z & c-o open files in new tabs and jump to first opened
 let g:ctrlp_open_multiple_files = 'tj'
+" conflicting keymap with yankring
+nnoremap <c-\> :CtrlP<CR>
