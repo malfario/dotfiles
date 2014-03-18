@@ -56,6 +56,10 @@ set noswapfile
 " w!!: Writes using sudo
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Move cursor to next editor row if paragraph is wrapped
+nnoremap j gj
+nnoremap k gk
+
 " **** Insert mode key mappings ****
 " Ctrl-e: Go to end of line
 inoremap <c-e> <esc>A
