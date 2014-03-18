@@ -176,6 +176,6 @@
 		 "cx.c3.theunarchiver",
 		 "com.peternoriega.unrarx",
 		 "com.coppertino.Vox"],
-    "ignore-menu-bar": "true",
+    "ignore-menu-bar": true,
     "float-small-windows": true
 }
