@@ -42,6 +42,7 @@ endif
 
 " Turn on line numbers
 set number
+set relativenumber
 
 " Turn off sound
 set vb
