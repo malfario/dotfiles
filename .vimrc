@@ -192,5 +192,7 @@ let g:Powerline_symbols = 'fancy'
 let g:ctrlp_open_new_file = 't'
 " c-z & c-o open files in new tabs and jump to first opened
 let g:ctrlp_open_multiple_files = 'tj'
-" conflicting keymap with yankring
-nnoremap <c-\> :CtrlP<CR>
+
+" numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
