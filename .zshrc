@@ -24,34 +24,38 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew lein rvm)
+plugins=(git osx brew lein rvm vagrant docker)
 
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v # Use vi-mode
 bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
-
-# Bind C-R to incremental reverse search in vi-mode
-# One may still use vi-history-search-backward with <Esc>/<search text><Enter> + [n|N]
+bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
 
 unsetopt nomatch
 
-# Set cursor shape to vertical bar on insert mode
-function zle-line-init {
-  zle -K viins
+## Set cursor shape to vertical bar on insert mode
+function zle-keymap-select zle-line-init
+{
+    # change cursor shape in iTerm2
+    case $KEYMAP in
+        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+    esac
+
+    zle reset-prompt
+    zle -R
 }
 
-function zle-line-init zle-keymap-select {
-  if [ $KEYMAP = vicmd ]; then
-    echo -ne "\033]50;CursorShape=2\a"
-  else
-    echo -ne "\033]50;CursorShape=0\a"
-  fi
+function zle-line-finish
+{
+    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
 }
 
-#zle -N zle-line-init
-#zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
 
 # Load local profile settings and aliases
 source ~/.zshrc-local
