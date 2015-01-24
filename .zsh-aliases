@@ -8,3 +8,14 @@ alias gci="git commit"
 alias gst="git status"
 alias gb="git branch"
 alias gh="log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"
+
+# vim
+alias gvim="/usr/local/bin/mvim"
+
+# docker 
+alias dimg='docker images'
+alias dps='docker ps -a'
+alias drma='docker rm -f $(dpsa -q)'
+alias drmi='docker rmi'
+alias dlog='docker logs'
+alias drun='docker run'
