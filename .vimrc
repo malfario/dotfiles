@@ -74,11 +74,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 "set nowrap
 "set linebreak  " Wrap at word
 
-" Make cursor move by visual lines instead of file lines (when wrapping)
-map k gk
-map j gj
-map E ge
-
 " Hard to type
 imap hh =>
 
@@ -140,6 +135,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Move cursor to next editor row if paragraph is wrapped
 nnoremap j gj
 nnoremap k gk
+nnoremap E ge
 
 " **** Insert mode key mappings ****
 " Ctrl-e: Go to end of line
