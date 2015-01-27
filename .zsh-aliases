@@ -15,7 +15,8 @@ alias gvim="/usr/local/bin/mvim"
 # docker 
 alias dimg='docker images'
 alias dps='docker ps -a'
-alias drma='docker rm -f $(dpsa -q)'
+alias drma='docker rm -f $(docker ps -a -q)'
 alias drmi='docker rmi'
 alias dlog='docker logs'
 alias drun='docker run'
+alias drmio='docker images | grep \<none\> | awk "{ print $3 }" | xargs docker rmi'
