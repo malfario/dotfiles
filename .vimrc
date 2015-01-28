@@ -1,5 +1,14 @@
 " **** vim-plug package manager ****
-call plug#begin('~/.vim/plugged')
+" https://github.com/junegunn/vim-plug
+
+if has('win32') || has('win64')
+  let g:plug_threads = 1 " Disable parallel plugin install on Windows 
+  let plugdir = '~/_vimfiles/plugged'
+else
+  let plugdir = '~/.vim/plugged'
+endif
+
+call plug#begin(plugdir)
 
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
@@ -46,11 +55,6 @@ Plug 'fugalh/desert.vim'
 Plug 'twerth/ir_black'
 
 call plug#end()
-
-" Disable parallel plugin install on Windows
-if has('win32') || has('win64')
-  let g:plug_threads = 1
-endif
 
 " **** global config ****
 
