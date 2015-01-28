@@ -3,7 +3,7 @@
 
 if has('win32') || has('win64')
   let g:plug_threads = 1 " Disable parallel plugin install on Windows 
-  let plugdir = '~/_vimfiles/plugged'
+  let plugdir = '~/vimfiles/plugged'
 else
   let plugdir = '~/.vim/plugged'
 endif
