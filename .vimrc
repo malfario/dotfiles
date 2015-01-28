@@ -53,6 +53,7 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fugalh/desert.vim'
 Plug 'twerth/ir_black'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
