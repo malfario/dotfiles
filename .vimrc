@@ -85,21 +85,6 @@ imap hh =>
 " Recognize md file extension as mardown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-"" Omni Completion
-"autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c set omnifunc=ccomplete#Complete
-"" May require ruby compiled in
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
-
-"set nocompatible              " be iMproved, required
-"syntax on
-"filetype off                  " required
-
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
   set encoding=utf8
@@ -239,18 +224,3 @@ let g:airline#extensions#tabline#enabled = 1
 "inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 "inoremap <expr><C-y>  neocomplcache#close_popup()
 "inoremap <expr><C-c>  neocomplcache#cancel_popup()
-
-"" **** Powerline ****
-"" Enable vim-powerline
-"let g:Powerline_symbols = 'fancy'
-"" Enable powerline
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-"" **** YankRing.vim ****
-"" Press F2 to show YankRing buffer
-"nnoremap <silent><F2> :YRShow<CR>
-
-"" **** Local settings ****
-"if filereadable(expand("~/.vimrc.local"))
-  "source ~/.vimrc.local
-"endif
