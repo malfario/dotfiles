@@ -112,12 +112,14 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Cursor settings. This makes terminal vim sooo much nicer!
 " Tmux will only forward escape sequences to the terminal if surrounded by a DCS
 " sequence
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if has('unix')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
 endif
 
 " Turn on line numbers
@@ -134,7 +136,9 @@ set nowritebackup
 set noswapfile
 
 " w!!: Writes using sudo
-cnoremap w!! w !sudo tee % >/dev/null
+if has('unix')
+  cnoremap w!! w !sudo tee % >/dev/null
+endif
 
 " Move cursor to next editor row if paragraph is wrapped
 nnoremap j gj
@@ -197,7 +201,9 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
 " **** vim-airline ****
-let g:airline_powerline_fonts = 1
+if has('unix') || has('gui')
+  let g:airline_powerline_fonts = 1
+endif
 let g:airline#extensions#tabline#enabled = 1
 
 " **** DISABLED STUFF ****
