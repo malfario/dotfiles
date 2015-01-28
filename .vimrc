@@ -100,9 +100,12 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "syntax on
 "filetype off                  " required
 
-"set encoding=utf8
-"set fileencoding=utf8
-"set fileencodings=ucs-bom,utf8,latin1,prc
+" Force encoding in Windows console vim 
+if (has('win32') || has('win64')) && !has('gui_running')
+  set encoding=utf8
+  "set fileencoding=utf8
+  "set fileencodings=ucs-bom,utf8,latin1,prc
+endif
 
 " Escape with jj
 inoremap jj <Esc>
@@ -202,7 +205,7 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
 " **** vim-airline ****
-if has('unix') || has('gui')
+if has('unix') || has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
