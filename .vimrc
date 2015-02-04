@@ -10,6 +10,8 @@ endif
 
 call plug#begin(plugdir)
 
+"Plug 'Shougo/neocomplete.vim'
+Plug 'klen/python-mode'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
@@ -20,7 +22,6 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/Gundo'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/matchit.zip'
-"Plug 'Shougo/neocomplcache'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
@@ -28,7 +29,6 @@ Plug 'myusuf3/numbers.vim'
 Plug 'vim-scripts/paredit.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/ruby-matchit'
-Plug 'ervandew/supertab'
 Plug 'Shougo/unite.vim'
 Plug 'bling/vim-airline'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -45,7 +45,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-"Plug 'vim-scripts/YankRing.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'duythinht/vim-coffee'
 Plug 'vim-scripts/desertEx'
@@ -195,32 +194,51 @@ if has('unix') || has('gui_running')
 endif
 let g:airline#extensions#tabline#enabled = 1
 
-" **** DISABLED STUFF ****
+" **** python-mode ****
+" python-mode autocompletes hangs vim:
+" https://github.com/klen/python-mode/issues/405
+let g:pymode_rope = 0
 
-"" **** Autocomplcache ****
-"" Disable AutoComplPop.
-"let g:acp_enableAtStartup = 0
-"" Use neocomplcache.
-"let g:neocomplcache_enable_at_startup = 1
-"" Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
-"" Set minimum syntax keyword length.
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" **** VimCompletesMe ****
+autocmd FileType clojure let b:vcm_tab_complete = "user"
+
+" **** neocomplete *****
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_smart_case = 1
+"let g:neocomplete#sources#syntax#min_keyword_length = 3
+"let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+"" Define dictionary.
+""let g:neocomplete#sources#dictionary#dictionaries = {
+    ""\ 'default' : '',
+    ""\ 'vimshell' : $HOME.'/.vimshell_hist',
+    ""\ 'scheme' : $HOME.'/.gosh_completions'
+    ""\ }
+
+"" Define keyword.
+""if !exists('g:neocomplete#keyword_patterns')
+    ""let g:neocomplete#keyword_patterns = {}
+""endif
+""let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 "" Plugin key-mappings.
-"inoremap <expr><C-z>     neocomplcache#undo_completion()
-"inoremap <expr><C-l>     neocomplcache#complete_common_string()
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-l>     neocomplete#complete_common_string()
+
 "" Recommended key-mappings.
 "" <CR>: close popup and save indent.
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 "function! s:my_cr_function()
-  "return neocomplcache#smart_close_popup() . "\<CR>"
+  "return neocomplete#close_popup() . "\<CR>"
   "" For no inserting <CR> key.
-  ""return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+  ""return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 "endfunction
-"" <TAB>: completion using supertab
+
+"" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 "" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-c>  neocomplcache#cancel_popup()
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-y>  neocomplete#close_popup()
+"inoremap <expr><C-e>  neocomplete#cancel_popup()
