@@ -10,6 +10,10 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'guns/vim-sexp'
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'amdt/vim-niji', { 'for': 'clojure' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
@@ -20,12 +24,11 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/Gundo'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/matchit.zip'
-"Plug 'Shougo/neocomplcache'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
 Plug 'myusuf3/numbers.vim'
-Plug 'vim-scripts/paredit.vim'
+"Plug 'vim-scripts/paredit.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/ruby-matchit'
 Plug 'ervandew/supertab'
@@ -45,7 +48,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-"Plug 'vim-scripts/YankRing.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'duythinht/vim-coffee'
 Plug 'vim-scripts/desertEx'
@@ -195,32 +197,5 @@ if has('unix') || has('gui_running')
 endif
 let g:airline#extensions#tabline#enabled = 1
 
-" **** DISABLED STUFF ****
-
-"" **** Autocomplcache ****
-"" Disable AutoComplPop.
-"let g:acp_enableAtStartup = 0
-"" Use neocomplcache.
-"let g:neocomplcache_enable_at_startup = 1
-"" Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
-"" Set minimum syntax keyword length.
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-"" Plugin key-mappings.
-"inoremap <expr><C-z>     neocomplcache#undo_completion()
-"inoremap <expr><C-l>     neocomplcache#complete_common_string()
-"" Recommended key-mappings.
-"" <CR>: close popup and save indent.
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"function! s:my_cr_function()
-  "return neocomplcache#smart_close_popup() . "\<CR>"
-  "" For no inserting <CR> key.
-  ""return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-"endfunction
-"" <TAB>: completion using supertab
-"" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-c>  neocomplcache#cancel_popup()
+" **** BufferGator ****
+let g:buffergator_viewport_split_policy = 'T' "Open on top split
