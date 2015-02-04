@@ -12,6 +12,10 @@ call plug#begin(plugdir)
 
 "Plug 'Shougo/neocomplete.vim'
 Plug 'klen/python-mode'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'guns/vim-sexp'
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'amdt/vim-niji', { 'for': 'clojure' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
@@ -26,7 +30,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
 Plug 'myusuf3/numbers.vim'
-Plug 'vim-scripts/paredit.vim'
+"Plug 'vim-scripts/paredit.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/ruby-matchit'
 Plug 'Shougo/unite.vim'
@@ -201,6 +205,9 @@ let g:pymode_rope = 0
 
 " **** VimCompletesMe ****
 autocmd FileType clojure let b:vcm_tab_complete = "user"
+
+" **** BufferGator ****
+let g:buffergator_viewport_split_policy = 'T' "Open on top split
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
