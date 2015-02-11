@@ -64,6 +64,11 @@ call plug#end()
 
 " **** global config ****
 
+" Set leader key
+"let mapleader="\<Space>"
+let mapleader=","
+let maplocalleader=","
+
 " Use 2 spaces
 set softtabstop=2
 set shiftwidth=2
@@ -78,7 +83,6 @@ hi CursorLine cterm=NONE ctermbg=darkgray ctermfg=NONE
 set hlsearch  " highlight search
 set ignorecase " Ignore case when searching 
 set smartcase " Ignore case when searching lowercase
-nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "" Line Wrapping
 "set nowrap
@@ -210,6 +214,13 @@ autocmd FileType clojure let b:vcm_tab_complete = "user"
 
 " **** BufferGator ****
 let g:buffergator_viewport_split_policy = 'T' "Open on top split
+
+" **** NERDTree-Tabs ****
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+" **** Unite ****
+nnoremap <Leader>b :Unite buffer<CR>
+nnoremap <Leader>B :UniteClose<CR>
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
