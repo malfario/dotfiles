@@ -35,6 +35,7 @@ elseif has("gui_gtk2")
 
 elseif has("x11")
 elseif has("gui_win32")
-  set guifont=DejaVu_Sans_Mono_for_Powerline:h8
+  "set guifont=DejaVu_Sans_Mono_for_Powerline:h8
+  set guifont=Powerline_Consolas:h9
   set anti " Antialias font
 end
