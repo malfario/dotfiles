@@ -28,7 +28,8 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/Gundo'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/matchit.zip'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
@@ -221,6 +222,9 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " **** Unite ****
 nnoremap <Leader>b :Unite buffer<CR>
 nnoremap <Leader>B :UniteClose<CR>
+
+" **** vim-nerdtree-tabs ****
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
