@@ -60,6 +60,7 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fugalh/desert.vim'
 Plug 'twerth/ir_black'
 Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
