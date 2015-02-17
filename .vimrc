@@ -175,7 +175,14 @@ inoremap <c-g> <Right>
 let g:ctrlp_map = '<c-p>'  
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multiple_files = 'tj'
-set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
+
+if has('win32') || has('win64')
+  set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'dir %s /-n /b /s /a-d']
+else
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
 
 " Enable pymatcher
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
