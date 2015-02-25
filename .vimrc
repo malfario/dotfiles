@@ -10,9 +10,10 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-"Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/neocomplete.vim'
 Plug 'klen/python-mode'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'guns/vim-sexp'
