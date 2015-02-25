@@ -87,6 +87,10 @@ set hlsearch  " highlight search
 set ignorecase " Ignore case when searching 
 set smartcase " Ignore case when searching lowercase
 
+" Disable folds temporarily when opening a file.
+" Use `zc` or `zi` to restore folding.
+set nofoldenable
+
 "" Line Wrapping
 "set nowrap
 "set linebreak  " Wrap at word
@@ -217,7 +221,7 @@ let g:airline#extensions#tabline#enabled = 1
 " **** python-mode ****
 " python-mode autocompletes hangs vim:
 " https://github.com/klen/python-mode/issues/405
-let g:pymode_rope = 0
+" let g:pymode_rope = 0
 
 " **** VimCompletesMe ****
 autocmd FileType clojure let b:vcm_tab_complete = "user"
