@@ -242,6 +242,8 @@ let g:markdown_fenced_languages =
   \ 'js=javascript', 'json=javascript', 'ruby',
   \ 'sass', 'xml', 'html', 'python']
 
+" **** vim-localrc ****
+let g:localvimrc_ask = 0
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
