@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'Yggdroot/indentLine'
 Plug 'mtth/scratch.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'jeetsukumaran/vim-indentwise'
@@ -244,6 +245,9 @@ let g:markdown_fenced_languages =
 
 " **** vim-localrc ****
 let g:localvimrc_ask = 0
+
+" **** indent-lines ****
+nnoremap <Leader>ig :IndentLinesToggle<CR>
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
