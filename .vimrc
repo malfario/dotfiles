@@ -11,6 +11,7 @@ endif
 call plug#begin(plugdir)
 
 Plug 'mtth/scratch.vim'
+Plug 'embear/vim-localvimrc'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
@@ -217,9 +218,7 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 
 " **** python-mode ****
-" python-mode autocompletes hangs vim:
-" https://github.com/klen/python-mode/issues/405
-" let g:pymode_rope = 0
+" Load .lvimrc per project through vim-localrc plugin.
 
 " **** VimCompletesMe ****
 autocmd FileType clojure let b:vcm_tab_complete = "user"
