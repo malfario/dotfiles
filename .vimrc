@@ -236,6 +236,13 @@ nnoremap <Leader>B :UniteClose<CR>
 " **** vim-nerdtree-tabs ****
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
+" **** vim-markdown ****
+let g:markdown_fenced_languages =
+  \ ['css', 'erb=eruby', 'javascript',
+  \ 'js=javascript', 'json=javascript', 'ruby',
+  \ 'sass', 'xml', 'html', 'python']
+
+
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
 "let g:neocomplete#enable_smart_case = 1
