@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'mtth/scratch.vim'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
