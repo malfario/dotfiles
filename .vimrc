@@ -98,9 +98,6 @@ set nofoldenable
 " Hard to type
 imap hh =>
 
-" Recognize md file extension as mardown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
   set encoding=utf8
