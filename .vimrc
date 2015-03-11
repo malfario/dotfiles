@@ -217,6 +217,7 @@ if has('unix') || has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_whitespace = 0
 
 " **** python-mode ****
 " Load .lvimrc per project through vim-localrc plugin.
@@ -249,6 +250,7 @@ let g:localvimrc_ask = 0
 " **** indentline ****
 nnoremap <Leader>ig :IndentLinesToggle<CR>
 let g:indentLine_faster = 1
+let g:indentLine_enabled = 0
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
