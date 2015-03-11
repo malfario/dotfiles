@@ -251,6 +251,8 @@ let g:localvimrc_ask = 0
 nnoremap <Leader>ig :IndentLinesToggle<CR>
 let g:indentLine_faster = 1
 let g:indentLine_enabled = 0
+let g:indentLine_char = '┆'
+let g:indentLine_first_char = '┆'
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
