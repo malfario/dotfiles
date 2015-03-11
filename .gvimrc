@@ -13,7 +13,7 @@ set lines=50
 if has("gui_macvim")
 
   set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
-  set guifont=Anonymice_Powerline:h11
+  set guifont=Sauce_Code_Powerline:h13
   "set stal=2 " turn on tabs by default
 
   " Command-Option-ArrowKey to switch viewports
@@ -35,7 +35,7 @@ elseif has("gui_gtk2")
 
 elseif has("x11")
 elseif has("gui_win32")
-  "set guifont=DejaVu_Sans_Mono_for_Powerline:h8
-  set guifont=Powerline_Consolas:h9
+  set renderoptions=type:directx,gamma:1.0,contrast:0.2,level:1.0,geom:1,renmode:5,taamode:1
+  set guifont=Powerline_Consolas:h10
   set anti " Antialias font
 end
