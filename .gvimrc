@@ -1,6 +1,6 @@
 " Color scheme
-set background=dark
-colorscheme zenburn
+set background=light
+colorscheme solarized
 
 " Remove toolbar
 set go-=T
