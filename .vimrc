@@ -221,7 +221,7 @@ if has('unix') || has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_detect_whitespace = 0
+let g:airline#extensions#whitespace#enabled = 0
 
 " **** python-mode ****
 " Load .lvimrc per project through vim-localrc plugin.
