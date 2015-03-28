@@ -101,6 +101,10 @@ set nofoldenable
 " Hard to type
 imap hh =>
 
+" Edit/Source .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
   set encoding=utf8
