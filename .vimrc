@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'osyo-manga/vim-over'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'mtth/scratch.vim'
 Plug 'embear/vim-localvimrc'
