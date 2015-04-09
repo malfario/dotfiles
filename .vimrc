@@ -71,8 +71,10 @@ call plug#end()
 
 " **** global config ****
 
+" Don't close buffers
+set hidden
+
 " Set leader key
-"let mapleader="\<Space>"
 let mapleader=","
 let maplocalleader=","
 
