@@ -22,7 +22,7 @@ Plug 'klen/python-mode'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'amdt/vim-niji', { 'for': 'clojure' }
+Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
