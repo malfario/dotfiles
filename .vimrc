@@ -242,8 +242,7 @@ let g:buffergator_viewport_split_policy = 'T' "Open on top split
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
-nnoremap <Leader>b :Unite buffer<CR>
-nnoremap <Leader>B :UniteClose<CR>
+nnoremap <Leader>B :Unite buffer<CR>
 nnoremap <Leader>f :Unite -start-insert file_rec/async<CR>
 nnoremap <Leader>fp :Unite -start-insert -auto-preview file_rec/async<CR>
 nnoremap <Leader>/ :Unite grep:.<CR>
