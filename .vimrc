@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'mtth/scratch.vim'
 Plug 'embear/vim-localvimrc'
@@ -41,6 +42,7 @@ Plug 'myusuf3/numbers.vim'
 "Plug 'vim-scripts/paredit.vim'
 Plug 'vim-scripts/Rename'
 Plug 'vim-scripts/ruby-matchit'
+Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'bling/vim-airline'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -189,6 +191,12 @@ else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 endif
 
+" If ag is available use it as filename list generator instead of 'find'
+if executable("ag")
+  :unlet g:ctrlp_user_command
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -i --nocolor --nogroup --hidden -g ""']
+endif
+
 " Enable pymatcher
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
@@ -201,12 +209,6 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " Set no file limit, we are building a big project
 let g:ctrlp_max_files = 0
-
-" If ag is available use it as filename list generator instead of 'find'
-if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
-endif
 
 " **** numbers.vim ****
 nnoremap <F3> :NumbersToggle<CR>
@@ -234,6 +236,18 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " **** Unite ****
 nnoremap <Leader>b :Unite buffer<CR>
 nnoremap <Leader>B :UniteClose<CR>
+nnoremap <Leader>f :Unite -start-insert file_rec/async<CR>
+nnoremap <Leader>fp :Unite -start-insert -auto-preview file_rec/async<CR>
+nnoremap <Leader>/ :Unite grep:.<CR>
+
+if executable('ag')
+  " Ag: https://github.com/ggreer/the_silver_searcher
+  " Windows port: https://github.com/kjk/the_silver_searcher
+  let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " **** vim-nerdtree-tabs ****
 let g:nerdtree_tabs_open_on_gui_startup = 0
