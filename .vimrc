@@ -11,6 +11,8 @@ endif
 call plug#begin(plugdir)
 
 Plug 'majutsushi/tagbar'
+Plug 'justinmk/vim-gtfo'
+Plug 'osyo-manga/vim-over'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
 Plug 'mtth/scratch.vim'
 Plug 'embear/vim-localvimrc'
@@ -22,7 +24,7 @@ Plug 'klen/python-mode'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'amdt/vim-niji', { 'for': 'clojure' }
+Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
@@ -72,8 +74,10 @@ call plug#end()
 
 " **** global config ****
 
+" Don't close buffers
+set hidden
+
 " Set leader key
-"let mapleader="\<Space>"
 let mapleader=","
 let maplocalleader=","
 
@@ -102,6 +106,10 @@ set nofoldenable
 
 " Hard to type
 imap hh =>
+
+" Edit/Source .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
