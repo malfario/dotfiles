@@ -243,8 +243,8 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
 nnoremap <Leader>B :Unite buffer<CR>
-nnoremap <Leader>f :Unite -start-insert file_rec/async<CR>
-nnoremap <Leader>fp :Unite -start-insert -auto-preview file_rec/async<CR>
+nnoremap <Leader>f :Unite file_rec/async<CR>
+nnoremap <Leader>p :Unite -auto-preview file_rec/async<CR>
 nnoremap <Leader>/ :Unite grep:.<CR>
 
 if executable('ag')
