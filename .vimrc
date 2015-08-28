@@ -10,6 +10,9 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'wincent/ferret'
+Plug 'tpope/vim-dispatch'
+Plug 'MailOnline/vim-cljrefactor', { 'for': 'clojure' }
 Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-gtfo'
 Plug 'osyo-manga/vim-over'
