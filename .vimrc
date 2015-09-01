@@ -226,6 +226,7 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
 " **** vim-airline ****
+set noshowmode " Disable status bar mode hint
 if has('unix') || has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
