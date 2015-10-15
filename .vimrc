@@ -10,6 +10,9 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'chase/vim-ansible-yaml'
+Plug 'zah/nim.vim'
+Plug 'floobits/floobits-neovim'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-dispatch'
 Plug 'MailOnline/vim-cljrefactor', { 'for': 'clojure' }
@@ -278,6 +281,25 @@ let g:indentLine_faster = 1
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┆'
 let g:indentLine_first_char = '┆'
+
+" **** nim ****
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+
+" Dash search
+command! DashNim silent !open -g dash://nimrod:"<cword>"
+command! DashDef silent !open -g dash://def:"<cword>"
+nmap K :DashDef<CR>\|:redraw!<CR>
+au FileType nim nmap K :DashNim<CR>\|:redraw!<CR>
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
