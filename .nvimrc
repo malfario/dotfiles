@@ -7,6 +7,20 @@ inoremap ï <ESC>o
 inoremap Ï <ESC>O
 inoremap » <ESC>:
 
+set splitbelow
+set splitright
+
+:au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+:tnoremap <leader><ESC> <C-\><C-n>
+:tnoremap <A-h> <C-\><C-n><C-w>h
+:tnoremap <A-j> <C-\><C-n><C-w>j
+:tnoremap <A-k> <C-\><C-n><C-w>k
+:tnoremap <A-l> <C-\><C-n><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+
 " **** Nim stuff
 " TODO:
 " Reuse scratch buffer: https://github.com/vim-scripts/scratch.vim/blob/master/plugin/scratch.vim
