@@ -26,7 +26,12 @@ set splitright
 " Reuse scratch buffer: https://github.com/vim-scripts/scratch.vim/blob/master/plugin/scratch.vim
 
 function! s:NimCompileHandler(job_id, data, event)
-  call append(0, a:data)
+  if a:event == 'exit'
+    setlocal nomodifiable
+  else
+    " call append(line('$'), a:data)
+    call append(0, a:data)
+  endif
 endfunction
 
 function! s:OpenScratch(height)
@@ -37,10 +42,12 @@ endfunction
 function! s:NimCompile(filename, args)
   let s:callbacks = {
   \   'on_stdout': function('s:NimCompileHandler'),
-  \   'on_stderr': function('s:NimCompileHandler')
+  \   'on_stderr': function('s:NimCompileHandler'),
+  \   'on_exit': function('s:NimCompileHandler')
   \ }
   let l:cmd = add(['nim', 'c', a:args], a:filename)
   let job1 = jobstart(l:cmd, s:callbacks)
+  " Scratch
   call s:OpenScratch('20%')
 endfunction
 
