@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'wellle/targets.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'zah/nim.vim'
 Plug 'floobits/floobits-neovim'
