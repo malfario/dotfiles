@@ -10,6 +10,10 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/unite-help'
 Plug 'wellle/targets.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'zah/nim.vim'
@@ -241,17 +245,28 @@ let g:airline#extensions#whitespace#enabled = 0
 " **** VimCompletesMe ****
 autocmd FileType clojure let b:vcm_tab_complete = "user"
 
-" **** BufferGator ****
-let g:buffergator_viewport_split_policy = 'T' "Open on top split
-
 " **** NERDTree-Tabs ****
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
-nnoremap <Leader>bb :Unite buffer<CR>
-nnoremap <Leader>ff :Unite -start-insert file_rec/async<CR>
-nnoremap <Leader>fp :Unite -start-insert -auto-preview file_rec/async<CR>
-nnoremap <Leader>/ :Unite grep:.<CR>
+nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
+nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
+nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
+nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
+nnoremap <leader>U :<C-u>Unite -resume<CR>
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
+
+autocmd FileType unite call s:unite_custom_settings()
+function! s:unite_custom_settings()
+  imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+  nmap <buffer> <C-j>   <Plug>(unite_toggle_auto_preview)
+
+  call unite#custom#profile('default', 'context', {
+  \   'no_split': 1,
+  \   'no_resize': 1
+  \ })
+endfunction
 
 if executable('ag')
   " Ag: https://github.com/ggreer/the_silver_searcher
