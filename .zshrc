@@ -9,6 +9,9 @@ export EDITOR="vim"
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
 
+# Disable oh-my-zsh auto-update
+export DISABLE_AUTO_UPDATE="true"
+
 ### zgen config
 # mkdir ~/.zsh && curl -o ~/.zsh/zgen.zsh https://raw.githubusercontent.com/tarjoilija/zgen/master/zgen.zsh
 source "$HOME/.zsh/zgen.zsh"
@@ -34,9 +37,6 @@ if ! zgen saved; then
   # Apply config
   zgen save
 fi
-
-# Disable oh-my-zsh auto-update
-export DISABLE_AUTO_UPDATE="true"
 
 ### Vi mode config
 bindkey -v 
