@@ -88,8 +88,8 @@ call plug#end()
 set hidden
 
 " Set leader key
-let mapleader=","
-let maplocalleader=","
+let mapleader=" "
+let maplocalleader=" "
 
 " Use 2 spaces
 set softtabstop=2
@@ -120,6 +120,10 @@ imap hh =>
 " Edit/Source .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Spacemacs bindings
+nmap <leader>fs :w<CR>
+nmap <leader>qq :q<CR>
 
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
