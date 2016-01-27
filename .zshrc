@@ -69,8 +69,4 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-### Paths
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-# Hook for desk activation
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 source $(pew shell_config)
