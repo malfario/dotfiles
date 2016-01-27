@@ -77,7 +77,8 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fugalh/desert.vim'
 Plug 'twerth/ir_black'
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 call plug#end()
 
