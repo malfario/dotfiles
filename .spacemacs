@@ -34,6 +34,8 @@ values."
      restclient
      jabber
      html
+     yaml
+     git
      ;; git
      ;; markdown
      ;; org
