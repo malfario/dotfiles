@@ -10,6 +10,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'schickling/vim-bufonly'
 Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-gtfo'
 Plug 'osyo-manga/vim-over'
