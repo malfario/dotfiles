@@ -1,41 +1,53 @@
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+### Global config
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#export ZSH_THEME="robbyrussell"
-export ZSH_THEME="daveverwer"
+# Enable nvim true color
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+# Set default shell editor
 export EDITOR="vim"
 
 # Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
+export CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+# Disable oh-my-zsh auto-update
+export DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
+### zgen config
+# mkdir ~/.zsh && curl -o ~/.zsh/zgen.zsh https://raw.githubusercontent.com/tarjoilija/zgen/master/zgen.zsh
+source "$HOME/.zsh/zgen.zsh"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-export DISABLE_AUTO_TITLE="true"
+if ! zgen saved; then
+  # Use omz
+  zgen oh-my-zsh
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew lein rvm vagrant docker)
+  # Load plugins
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions
 
-source $ZSH/oh-my-zsh.sh
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/osx
+  zgen oh-my-zsh plugins/brew
+  zgen oh-my-zsh plugins/lein
+  zgen oh-my-zsh plugins/vagrant
+  zgen oh-my-zsh plugins/docker
 
-bindkey -v # Use vi-mode
+  # Default theme
+  zgen oh-my-zsh themes/daveverwer
+
+  # Apply config
+  zgen save
+fi
+
+### Vi mode config
+bindkey -v 
 bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
 bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
 
-unsetopt nomatch
+# Disable no match glob error
+unsetopt nomatch 
 
-## Set cursor shape to vertical bar on insert mode
+# Vi mode insert/normal mode hints
 function zle-keymap-select zle-line-init
 {
     # change cursor shape in iTerm2
@@ -57,14 +69,4 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-# Load local profile settings and aliases
-source ~/.zshrc-local
-
-if [[ -f ~/.zsh-aliases ]]; then
-  . ~/.zsh-aliases
-fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $(pew shell_config)

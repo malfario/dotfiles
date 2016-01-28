@@ -11,6 +11,17 @@ endif
 call plug#begin(plugdir)
 
 Plug 'schickling/vim-bufonly'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/unite-help'
+Plug 'wellle/targets.vim'
+Plug 'chase/vim-ansible-yaml'
+Plug 'zah/nim.vim'
+Plug 'floobits/floobits-neovim'
+Plug 'wincent/ferret'
+Plug 'tpope/vim-dispatch'
+Plug 'MailOnline/vim-cljrefactor', { 'for': 'clojure' }
 Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-gtfo'
 Plug 'osyo-manga/vim-over'
@@ -27,7 +38,6 @@ Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'vim-scripts/vim-niji', { 'for': 'clojure' }
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'tpope/vim-sensible'
 Plug 'ajh17/VimCompletesMe'
 Plug 'ggreer/the_silver_searcher'
 Plug 'FelikZ/ctrlp-py-matcher'
@@ -37,7 +47,6 @@ Plug 'vim-scripts/Gundo'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/matchit.zip'
 Plug 'tpope/vim-commentary'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
@@ -69,7 +78,8 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fugalh/desert.vim'
 Plug 'twerth/ir_black'
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 call plug#end()
 
@@ -79,8 +89,8 @@ call plug#end()
 set hidden
 
 " Set leader key
-let mapleader=","
-let maplocalleader=","
+let mapleader=" "
+let maplocalleader=" "
 
 " Use 2 spaces
 set softtabstop=2
@@ -111,6 +121,10 @@ imap hh =>
 " Edit/Source .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Spacemacs bindings
+nmap <leader>fs :w<CR>
+nmap <leader>qq :q<CR>
 
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
@@ -224,6 +238,7 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
 " **** vim-airline ****
+set noshowmode " Disable status bar mode hint
 if has('unix') || has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
@@ -236,17 +251,28 @@ let g:airline#extensions#whitespace#enabled = 0
 " **** VimCompletesMe ****
 autocmd FileType clojure let b:vcm_tab_complete = "user"
 
-" **** BufferGator ****
-let g:buffergator_viewport_split_policy = 'T' "Open on top split
-
 " **** NERDTree-Tabs ****
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
-nnoremap <Leader>B :Unite buffer<CR>
-nnoremap <Leader>f :Unite file_rec/async<CR>
-nnoremap <Leader>p :Unite -auto-preview file_rec/async<CR>
-nnoremap <Leader>/ :Unite grep:.<CR>
+nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
+nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
+nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
+nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
+nnoremap <leader>U :<C-u>Unite -resume<CR>
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
+
+autocmd FileType unite call s:unite_custom_settings()
+function! s:unite_custom_settings()
+  imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+  nmap <buffer> <C-j>   <Plug>(unite_toggle_auto_preview)
+
+  call unite#custom#profile('default', 'context', {
+  \   'no_split': 1,
+  \   'no_resize': 1
+  \ })
+endfunction
 
 if executable('ag')
   " Ag: https://github.com/ggreer/the_silver_searcher
@@ -275,6 +301,25 @@ let g:indentLine_faster = 1
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┆'
 let g:indentLine_first_char = '┆'
+
+" **** nim ****
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+
+" Dash search
+command! DashNim silent !open -g dash://nimrod:"<cword>"
+command! DashDef silent !open -g dash://def:"<cword>"
+nmap K :DashDef<CR>\|:redraw!<CR>
+au FileType nim nmap K :DashNim<CR>\|:redraw!<CR>
 
 " **** neocomplete *****
 "let g:neocomplete#enable_at_startup = 1
