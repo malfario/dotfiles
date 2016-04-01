@@ -2,7 +2,6 @@
 " https://github.com/junegunn/vim-plug
 
 if has('win32') || has('win64')
-  let g:plug_threads = 1 " Disable parallel plugin install on Windows 
   let plugdir = '~/vimfiles/plugged'
 else
   let plugdir = '~/.vim/plugged'
@@ -10,6 +9,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'tpope/vim-sensible'
 Plug 'schickling/vim-bufonly'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -18,7 +18,7 @@ Plug 'Shougo/unite-help'
 Plug 'wellle/targets.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'zah/nim.vim'
-Plug 'floobits/floobits-neovim'
+" Plug 'floobits/floobits-neovim'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-dispatch'
 Plug 'MailOnline/vim-cljrefactor', { 'for': 'clojure' }
