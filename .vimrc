@@ -2,7 +2,6 @@
 " https://github.com/junegunn/vim-plug
 
 if has('win32') || has('win64')
-  let g:plug_threads = 1 " Disable parallel plugin install on Windows 
   let plugdir = '~/vimfiles/plugged'
 else
   let plugdir = '~/.vim/plugged'
@@ -10,6 +9,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'tpope/vim-sensible'
 Plug 'schickling/vim-bufonly'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -18,7 +18,7 @@ Plug 'Shougo/unite-help'
 Plug 'wellle/targets.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'zah/nim.vim'
-Plug 'floobits/floobits-neovim'
+" Plug 'floobits/floobits-neovim'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-dispatch'
 Plug 'MailOnline/vim-cljrefactor', { 'for': 'clojure' }
@@ -277,7 +277,7 @@ endfunction
 if executable('ag')
   " Ag: https://github.com/ggreer/the_silver_searcher
   " Windows port: https://github.com/kjk/the_silver_searcher
-  let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
+  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
