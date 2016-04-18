@@ -36,14 +36,14 @@ values."
      html
      yaml
      git
-     ;; git
-     ;; markdown
+     csharp
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      ;; osx
      )
@@ -256,6 +256,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq
+   paradox-github-token '4f5aac9d0f7a54b1fcd2cf43e348a533c13ec696
    vc-follow-symlinks t)
 
   (with-eval-after-load 'helm-projectile
@@ -280,7 +281,8 @@ layers configuration. You are free to put any user code."
       (:password . "patrY4529")
       (:network-server . "nemo.notin.es")
       (:port . 443)
-      (:connection-type . ssl))))))
+      (:connection-type . ssl)))))
+ '(x-select-enable-clipboard t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
