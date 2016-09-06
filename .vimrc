@@ -9,6 +9,8 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'ctjhoa/spacevim'
+Plug 'shime/vim-livedown'
 Plug 'tpope/vim-sensible'
 Plug 'schickling/vim-bufonly'
 Plug 'Shougo/neomru.vim'
@@ -123,8 +125,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Spacemacs bindings
-nmap <leader>fs :w<CR>
-nmap <leader>qq :q<CR>
+" nmap <leader>fs :w<CR>
+" nmap <leader>qq :q<CR>
 
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
@@ -255,13 +257,13 @@ autocmd FileType clojure let b:vcm_tab_complete = "user"
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
-nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
-nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
-nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
-nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
-nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
-nnoremap <leader>U :<C-u>Unite -resume<CR>
-nnoremap <leader>y :<C-u>Unite history/yank<CR>
+" nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
+" nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
+" nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
+" nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
+" nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
+" nnoremap <leader>U :<C-u>Unite -resume<CR>
+" nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 autocmd FileType unite call s:unite_custom_settings()
 function! s:unite_custom_settings()
