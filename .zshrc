@@ -70,3 +70,4 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 
 source $(pew shell_config)
+source "$HOME/.zsh-aliases"

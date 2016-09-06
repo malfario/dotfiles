@@ -20,3 +20,6 @@ alias drmi='docker rmi'
 alias dlog='docker logs'
 alias drun='docker run'
 alias drmio='docker images | grep \<none\> | awk "{ print $3 }" | xargs docker rmi'
+
+# emacs
+alias emacs="/usr/local/Cellar/emacs-mac/emacs-25.1-rc1-mac-5.90/bin/emacs"
