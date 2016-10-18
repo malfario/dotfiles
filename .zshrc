@@ -69,6 +69,5 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-export PATH=/usr/local/bin:$PATH
 source $(pew shell_config)
 source "$HOME/.zsh-aliases"
