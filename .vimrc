@@ -9,6 +9,15 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'pelodelfuego/vim-swoop'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'hecal3/vim-leader-guide'
+Plug 'kana/vim-arpeggio'
+Plug 'mhinz/vim-startify'
+Plug 'osyo-manga/vim-over'
+Plug 'Raimondi/delimitMate'
+Plug 'sheerun/vim-polyglot'
 Plug 'ctjhoa/spacevim'
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-sensible'
