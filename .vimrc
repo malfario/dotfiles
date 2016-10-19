@@ -9,6 +9,14 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'dbakker/vim-projectroot'
+Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
+Plug 'moll/vim-bbye'
+Plug 'mbbill/undotree'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'haya14busa/incsearch.vim'
