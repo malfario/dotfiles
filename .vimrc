@@ -9,24 +9,25 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'dbakker/vim-projectroot'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
-Plug 'moll/vim-bbye'
+" Plug 'moll/vim-bbye'
 Plug 'mbbill/undotree'
 Plug 'pelodelfuego/vim-swoop'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'hecal3/vim-leader-guide'
+" Plug 'hecal3/vim-leader-guide'
 Plug 'kana/vim-arpeggio'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'osyo-manga/vim-over'
 Plug 'Raimondi/delimitMate'
 Plug 'sheerun/vim-polyglot'
-Plug 'ctjhoa/spacevim'
+" Plug 'ctjhoa/spacevim'
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-sensible'
 Plug 'schickling/vim-bufonly'
@@ -104,12 +105,15 @@ call plug#end()
 
 " **** global config ****
 
+" Use system clipboard
+set clipboard=unnamed
+
 " Don't close buffers
 set hidden
 
 " Set leader key
 let mapleader=" "
-let maplocalleader=" "
+let maplocalleader=","
 
 " Use 2 spaces
 set softtabstop=2
@@ -134,16 +138,17 @@ set nofoldenable
 "set nowrap
 "set linebreak  " Wrap at word
 
-" Hard to type
-imap hh =>
-
 " Edit/Source .vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>fed :e $MYVIMRC<CR>
+nmap <silent> <leader>feR :so $MYVIMRC<CR>
 
 " Spacemacs bindings
-" nmap <leader>fs :w<CR>
-" nmap <leader>qq :q<CR>
+nmap <silent> <leader>fs :w<CR>
+nmap <silent> <leader>qq :q<CR>
+nmap <silent> <leader>bb :ls<CR>
+nmap <silent> <leader>bd :bd<CR>
+nmap <silent> <leader>sc :noh<CR>
+nmap <silent> <leader><TAB> :b#<CR>
 
 " Force encoding in Windows console vim 
 if (has('win32') || has('win64')) && !has('gui_running')
@@ -151,9 +156,6 @@ if (has('win32') || has('win64')) && !has('gui_running')
   "set fileencoding=utf8
   "set fileencodings=ucs-bom,utf8,latin1,prc
 endif
-
-" Escape with jj
-inoremap jj <Esc>
 
 " Disable autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -172,7 +174,6 @@ if has('unix')
 endif
 
 " Turn on line numbers
-set number
 set relativenumber
 
 " Turn off sound
@@ -194,29 +195,11 @@ nnoremap j gj
 nnoremap k gk
 nnoremap E ge
 
-" **** Insert mode key mappings ****
-" Ctrl-e: Go to end of line
-inoremap <c-e> <esc>A
-
-" Ctrl-a: Go to begin of line
-inoremap <c-a> <esc>I
-
-" Ctrl-j: Move cursor up
-inoremap <expr> <c-j> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
-
-" Ctrl-k: Move cursor up
-inoremap <expr> <c-k> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
-
-" Ctrl-f: Move cursor left
-inoremap <c-f> <Left>
-
-" Ctrl-g: Move cursor right
-" Disable Surround.vim experimental insert mode mappings to avoid clashes
-silent! iunmap <C-G>s
-silent! iunmap <C-G>S
-inoremap <c-g> <Right>
-
 "" *********** Plugin config **************
+
+" **** vim-easyclip
+nnoremap gm m
+nmap M <Plug>MoveMotionEndOfLinePlug
 
 " **** CtrlP ****
 " c-y open new files in tab
@@ -274,13 +257,13 @@ autocmd FileType clojure let b:vcm_tab_complete = "user"
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " **** Unite ****
-" nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
-" nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
-" nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
-" nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
-" nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
-" nnoremap <leader>U :<C-u>Unite -resume<CR>
-" nnoremap <leader>y :<C-u>Unite history/yank<CR>
+nnoremap <silent> <Leader>bb :<C-u>Unite buffer<CR>
+nnoremap <Leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <Leader>fp :<C-u>Unite -start-insert -auto-preview file_rec/async:!<CR>
+nnoremap <Leader>fr :<C-u>Unite -start-insert file_mru<CR>
+nnoremap <Leader>/ :<C-u>Unite grep:.<CR>
+nnoremap <leader>U :<C-u>Unite -resume<CR>
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 autocmd FileType unite call s:unite_custom_settings()
 function! s:unite_custom_settings()
