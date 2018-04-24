@@ -3,5 +3,5 @@
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
-export PATH=$PATH:/usr/local/bin
+export PATH=/usr/local/bin:$PATH
 export PIP_EXTRA_INDEX_URL=https://pypi.notin.net

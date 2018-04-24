@@ -23,6 +23,7 @@ if ! zgen saved; then
   # Load plugins
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-autosuggestions
 
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/osx
@@ -38,36 +39,12 @@ if ! zgen saved; then
   zgen save
 fi
 
-### Vi mode config
-bindkey -v 
-bindkey -M viins 'jj' vi-cmd-mode # Map jj to esc
-bindkey -M viins '^R' history-incremental-search-backward
-bindkey -M vicmd '^R' history-incremental-search-backward
-
 # Disable no match glob error
 unsetopt nomatch 
 
-# Vi mode insert/normal mode hints
-function zle-keymap-select zle-line-init
-{
-    # change cursor shape in iTerm2
-    case $KEYMAP in
-        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
-    esac
+# Zsh-autosuggest color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
 
-    zle reset-prompt
-    zle -R
-}
-
-function zle-line-finish
-{
-    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
-}
-
-zle -N zle-line-init
-zle -N zle-line-finish
-zle -N zle-keymap-select
-
-source $(pew shell_config)
 source "$HOME/.zsh-aliases"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
