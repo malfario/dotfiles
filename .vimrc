@@ -175,6 +175,7 @@ endif
 
 " Turn on line numbers
 set relativenumber
+set number
 
 " Turn off sound
 set vb
