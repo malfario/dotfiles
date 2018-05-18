@@ -9,7 +9,7 @@ map('gt', 'T');
 // an example to remove mapkey `Ctrl-i`
 unmap('<Ctrl-i>');
 
-mapkey('<Ctrl-s>', '<Alt-s>');
+map('<Ctrl-i>', '<Alt-s>');
 
 // set theme
 settings.theme = `
