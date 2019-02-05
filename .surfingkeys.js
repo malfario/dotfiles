@@ -6,35 +6,23 @@ mapkey('<Ctrl-y>', 'Show me the money', function() {
 // an example to replace `T` with `gt`, click `Default mappings` to see how `T` works.
 map('gt', 'T');
 
-// an example to remove mapkey `Ctrl-i`
-unmap('<Ctrl-i>');
-
+// Disable surfingkeys for current domain
 map('<Ctrl-i>', '<Alt-s>');
 
-// set theme
-settings.theme = `
-.sk_theme {
-    background: #000;
-    color: #fff;
-}
-.sk_theme tbody {
-    color: #fff;
-}
-.sk_theme input {
-    color: #d9dce0;
-}
-.sk_theme .url {
-    color: #2173c5;
-}
-.sk_theme .annotation {
-    color: #38f;
-}
-.sk_theme .omnibar_highlight {
-    color: #fbd60a;
-}
-.sk_theme ul>li:nth-child(odd) {
-    background: #1e211d;
-}
-.sk_theme ul>li.focused {
-    background: #4ec10d;
-}`;
+map('<Ctrl-d>', 'd');
+map('d', 'x');
+unmap ('x');
+
+map('<Ctrl-u>', 'u');
+map('u', 'X');
+unmap ('X');
+
+map('H', 'S');
+map('L', 'D');
+unmap('S');
+unmap('D');
+
+map('J', 'R');
+map('K', 'E');
+unmap('R');
+unmap('E');
