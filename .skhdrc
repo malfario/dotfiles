@@ -84,13 +84,17 @@
 # ]
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-#cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+# cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # open qutebrowser
 #cmd + shift - return : ~/Scripts/qtb.sh
+cmd + shift - return : open -a /Applications/qutebrowser.app
 
 # open mpv
 #cmd - m : open -na /Applications/mpv.app $(pbpaste)
+cmd - m : open -na /Applications/mpv.app (pbpaste)
 
 # close focused window
 alt - w : chunkc tiling::window --close
@@ -275,3 +279,7 @@ ctrl + alt - d : chunkc tiling::desktop --layout float
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 
 cmd - h : chunkc tiling::window --focus west
+
+escape [
+  "psi" : false
+]
