@@ -264,32 +264,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "pointing_button": "button3"
-                            },
-                            "to": {
-                                "pointing_button": "button5"
-                            }
-                        },
-                        {
-                            "from": {
-                                "pointing_button": "button5"
-                            },
-                            "to": {
-                                "key_code": "mission_control"
-                            }
-                        },
-                        {
-                            "from": {
-                                "pointing_button": "button4"
-                            },
-                            "to": {
-                                "key_code": "f9"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
