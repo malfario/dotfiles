@@ -200,16 +200,16 @@ shift + cmd - 0 : chunkc tiling::window --send-to-desktop 10; chunkc tiling::des
 # focus monitor
 ctrl + alt - z  : chunkc tiling::monitor -f prev
 ctrl + alt - c  : chunkc tiling::monitor -f next
-ctrl + alt - 1  : chunkc tiling::monitor -f 1
-ctrl + alt - 2  : chunkc tiling::monitor -f 2
-ctrl + alt - 3  : chunkc tiling::monitor -f 3
+# ctrl + alt - 1  : chunkc tiling::monitor -f 1
+# ctrl + alt - 2  : chunkc tiling::monitor -f 2
+# ctrl + alt - 3  : chunkc tiling::monitor -f 3
 
 # send window to monitor and follow focus
 ctrl + cmd - z  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
 ctrl + cmd - c  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
-ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
-ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
-ctrl + cmd - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
+# ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
+# ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
+# ctrl + cmd - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 
 # increase region size
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
@@ -249,7 +249,7 @@ cmd + alt - f : chunkc tiling::window --toggle fullscreen
 shift + alt - f : chunkc tiling::window --toggle native-fullscreen
 
 # toggle window parent zoom
-#alt - d : chunkc tiling::window --toggle parent
+cmd + alt - d : chunkc tiling::window --toggle parent
 
 # toggle window split type
 alt - w : chunkc tiling::window --toggle split
@@ -279,9 +279,17 @@ ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
-ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+# Serialization
+ctrl + alt - 1 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout-1
+ctrl + alt - 2 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout-2
+ctrl + alt - 3 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout-3
 
-cmd - h : chunkc tiling::window --focus west
+ctrl + cmd - 1 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-1
+ctrl + cmd - 2 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-2
+ctrl + cmd - 3 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-3
+
+# Avoid window hiding
+cmd - h : false
 
 escape [
   "psi" : false
