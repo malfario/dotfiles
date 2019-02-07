@@ -86,14 +86,12 @@
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
-# cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # open qutebrowser
 #cmd + shift - return : ~/Scripts/qtb.sh
 cmd + shift - return : open -a /Applications/qutebrowser.app
 
 # open mpv
-#cmd - m : open -na /Applications/mpv.app $(pbpaste)
 cmd - m : open -na /Applications/mpv.app (pbpaste)
 
 # close focused window
@@ -126,6 +124,9 @@ shift + cmd - l : chunkc tiling::window --warp east
 # make floating window fill screen
 shift + ctrl - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
 
+# restore floating window from fill screen
+shift + ctrl - down   : chunkc tiling::window --grid-layout 4:4:1:1:2:2
+
 # make floating window fill left-half of screen
 shift + ctrl - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
 
@@ -133,15 +134,17 @@ shift + ctrl - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
 shift + ctrl - right  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
 
 # create desktop, move window and follow focus
-#shift + cmd - n : chunkc tiling::desktop --create;\
-                  # id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-                  # chunkc tiling::window --send-to-desktop $(echo ${id##* });\
-                  # chunkc tiling::desktop --focus $(echo ${id##* })
+cmd + alt - m : chunkc tiling::desktop --create;\
+                set id (chunkc tiling::query --desktops-for-monitor (chunkc tiling::query --monitor-for-desktop (chunkc tiling::query --desktop id)));\
+                set newdesk (expr $id : '.* \(.*\)$');\
+                chunkc tiling:window --send-to-desktop $newdesk;\
+                chunkc tiling::desktop --focus $newdesk;
 
 # create desktop and follow focus
 cmd + alt - n : chunkc tiling::desktop --create;\
-                id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
-                chunkc tiling::desktop --focus $(echo ${id##* })
+                set id (chunkc tiling::query --desktops-for-monitor (chunkc tiling::query --monitor-for-desktop (chunkc tiling::query --desktop id)));\
+                chunkc tiling::desktop --focus (expr $id : '.* \(.*\)$')
+
 # destroy desktop
 cmd + alt - w : chunkc tiling::desktop --annihilate
 
