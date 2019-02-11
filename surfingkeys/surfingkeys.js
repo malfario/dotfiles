@@ -21,3 +21,6 @@ map('J', 'R');
 map('K', 'E');
 unmap('R');
 unmap('E');
+
+map('<Ctrl-g>', '<Ctrl-h>');
+unmap('<Ctrl-h>');
