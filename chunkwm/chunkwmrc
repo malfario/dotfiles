@@ -147,6 +147,7 @@ chunkc tiling::rule --owner Finder --state float &
 chunkc tiling::rule --owner mpv --state float &
 chunkc tiling::rule --owner Steam --state float &
 chunkc tiling::rule --owner Zwift --state float &
-chunkc tiling::rule --owner ZwiftApp --state float &
+chunkc tiling::rule --owner ZwiftApp --state native-fullscreen &
+chunkc tiling::rule --owner Airmail --except Airmail --state float &
 
 chunkwm --load-sa
