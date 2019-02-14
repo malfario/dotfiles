@@ -95,7 +95,7 @@ cmd + shift - return : open -a /Applications/qutebrowser.app
 cmd - m : open -na /Applications/mpv.app (pbpaste)
 
 # close focused window
-ctrl - w : chunkc tiling::window --close
+ctrl + alt - w : chunkc tiling::window --close
 
 # focus window
 alt - h : chunkc tiling::window --focus west
