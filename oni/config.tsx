@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import * as Oni from "oni-api"
 
@@ -15,6 +14,14 @@ export const activate = (oni: Oni.Plugin.Api) => {
     // Or remove the default bindings here by uncommenting the below line:
     //
     // oni.input.unbind("<c-p>")
+
+    oni.editors.activeEditor.neovim.command('let mapleader="\\<SPACE>"')
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader>fs :w<CR>")
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader>qq :q<CR>")
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader>bb :ls<CR>")
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader>bd :bd<CR>")
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader>sc :nohl<CR>")
+    oni.editors.activeEditor.neovim.command("nmap <silent> <Leader><TAB> :b#<CR>")
 
 }
 
