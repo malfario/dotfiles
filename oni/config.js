@@ -30,5 +30,7 @@ exports.configuration = {
     "siedebar.default.open": false,
     "learning.enabled": false,
     "achievements.enabled": false,
-    "tabs.mode": "buffers"
+    "tabs.mode": "buffers",
+    "vim.setting.relativenumber": true,
+    "commandline.mode": false
 };
