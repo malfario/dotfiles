@@ -83,6 +83,12 @@
 #     "finder"      : false
 # ]
 
+# Passthrough mode disables all hotkeys
+:: default : chunkc border::color 0xff0f6288
+:: passthrough : chunkc border::color 0xff24ccaa
+cmd - x ; passthrough
+passthrough < cmd - x ; default
+
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
