@@ -9,6 +9,8 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'unblevable/quick-scope'
+Plug 'justinmk/vim-sneak'
 Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
@@ -52,7 +54,7 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " Plug 'Shougo/neocomplete.vim'
-Plug 'klen/python-mode'
+Plug 'python-mode/python-mode'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
@@ -81,7 +83,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'jdonaldson/vim-cheat'
 Plug 'tpope/vim-classpath'
 Plug 'guns/vim-clojure-static'
-Plug 'Lokaltog/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -197,6 +199,10 @@ nnoremap k gk
 nnoremap E ge
 
 "" *********** Plugin config **************
+" **** vim-sneak
+
+nmap <Leader><Leader>s <Plug>Sneak_s
+nmap <Leader><Leader>S <Plug>Sneak_S
 
 " **** vim-easyclip
 nnoremap gm m
