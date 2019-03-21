@@ -6,3 +6,9 @@ Link config files under `%APPDATA%\Oni`.
 mklink %APPDATA%\Oni\config.js .dotfiles\oni\config.js
 mklink %APPDATA%\Oni\config.tsx .dotfiles\oni\config.tsx
 ```
+
+## Unix
+
+```
+ln -s .dotfiles/oni ~/.config/oni
+```
