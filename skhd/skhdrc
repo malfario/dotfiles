@@ -294,8 +294,9 @@ ctrl + cmd - 1 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-1
 ctrl + cmd - 2 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-2
 ctrl + cmd - 3 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout-3
 
-# Avoid window hiding
+# Avoid hiding windows
 cmd - h : false
+cmd + alt - h : false
 
 escape [
   "psi" : false
