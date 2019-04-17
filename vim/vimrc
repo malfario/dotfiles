@@ -54,7 +54,11 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " Plug 'Shougo/neocomplete.vim'
-Plug 'python-mode/python-mode'
+
+" On Windows, install python-mode manually from an elevated prompt and w/ symlinks enabled:
+" git clone -c core.symlinks=true --recursive https://github.com/python-mode/python-mode 
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
+
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
