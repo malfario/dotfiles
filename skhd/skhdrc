@@ -105,7 +105,7 @@ ctrl + alt - w : chunkc tiling::window --close
 
 # focus window
 alt - h : chunkc tiling::window --focus west
-alt - j : chunkc tiling::window --focus south
+lalt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
@@ -243,7 +243,7 @@ alt - r : chunkc tiling::desktop --rotate 90
 alt - y : chunkc tiling::desktop --mirror vertical
 
 # mirror tree x-axis
-alt - x : chunkc tiling::desktop --mirror horizontal
+lalt - x : chunkc tiling::desktop --mirror horizontal
 
 # toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset
