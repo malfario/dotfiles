@@ -1,1 +1,11 @@
 add-highlighter global/ number-lines -relative
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable
+
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/fzf.kak"
+
+set-option global fzf_file_command 'rg'
+map global normal <c-p> ': fzf-mode<ret>'
