@@ -11,7 +11,6 @@ call plug#begin(plugdir)
 
 Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
-Plug 'svermeulen/vim-easyclip'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'dbakker/vim-projectroot'
