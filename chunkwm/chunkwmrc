@@ -149,7 +149,7 @@ chunkc tiling::rule --owner Steam --state float &
 chunkc tiling::rule --owner Zwift --state float &
 chunkc tiling::rule --owner ZwiftApp --state native-fullscreen &
 chunkc tiling::rule --owner Airmail --except Airmail --state float &
-chunkc tiling::rule --owner Eclipse --state float --except \".* - Eclipse - .*\" &
+chunkc tiling::rule --owner Eclipse --state float --except \"Eclipse - .*\" &
 
 chunkc tiling::rule --owner Spotify --desktop 4 --follow-desktop
 chunkc tiling::rule --owner Vox --desktop 4 --follow-desktop
