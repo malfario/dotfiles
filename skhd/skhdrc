@@ -91,7 +91,8 @@ passthrough < cmd + ctrl + alt - p ; default
 
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+# cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd + alt - return : osascript -e 'tell application "iTerm2"' -e 'create window with default profile' -e 'end tell'
 
 # open qutebrowser
 #cmd + shift - return : ~/Scripts/qtb.sh
