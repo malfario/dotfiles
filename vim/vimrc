@@ -207,10 +207,6 @@ nnoremap E ge
 nmap <Leader><Leader>s <Plug>Sneak_s
 nmap <Leader><Leader>S <Plug>Sneak_S
 
-" **** vim-easyclip
-nnoremap gm m
-nmap M <Plug>MoveMotionEndOfLinePlug
-
 " **** CtrlP ****
 " c-y open new files in tab
 " c-z & c-o open files in new tabs and jump to first opened
