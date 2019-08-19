@@ -5,6 +5,8 @@ set -x PATH /Users/rleblic/.local/bin $PATH
 
 set -x PATH /Users/rleblic/.poetry/bin $PATH
 
+set -x PATH /Users/rleblic/bin $PATH
+
 status --is-interactive; and source (pyenv init -|psub)
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
