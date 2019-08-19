@@ -9,6 +9,7 @@ endif
 
 call plug#begin(plugdir)
 
+Plug 'vim-syntastic/syntastic'
 Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/gv.vim'
@@ -37,7 +38,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite-help'
 Plug 'wellle/targets.vim'
-Plug 'chase/vim-ansible-yaml'
+Plug 'pearofducks/ansible-vim'
 Plug 'zah/nim.vim'
 " Plug 'floobits/floobits-neovim'
 Plug 'wincent/ferret'
