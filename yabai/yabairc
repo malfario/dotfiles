@@ -34,10 +34,13 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  36
-yabai -m config bottom_padding               36
-yabai -m config left_padding                 36
-yabai -m config right_padding                36
+yabai -m config top_padding                  50
+yabai -m config bottom_padding               50
+yabai -m config left_padding                 50
+yabai -m config right_padding                50
 yabai -m config window_gap                   15
+
+# rules
+yabai -m rule --add app=Airmail title="[^Airmail]" manage=off
 
 echo "yabai configuration loaded.."
