@@ -48,7 +48,6 @@ Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-gtfo'
 Plug 'osyo-manga/vim-over'
 Plug 'Yggdroot/indentLine', { 'for': 'python' }
-Plug 'mtth/scratch.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'junegunn/limelight.vim'
