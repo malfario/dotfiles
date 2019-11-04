@@ -3,3 +3,4 @@ fishd.*
 functions/*
 !functions/fish_prompt.fish
 !functions/take.fish
+private.fish

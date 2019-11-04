@@ -11,3 +11,10 @@ status --is-interactive; and source (pyenv init -|psub)
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 alias ls=lsd
+
+eval (starship init fish)
+
+# Load private config
+if [ -f $HOME/.config/fish/private.fish ]
+  source $HOME/.config/fish/private.fish
+end
