@@ -44,5 +44,9 @@ yabai -m config window_gap                   15
 yabai -m rule --add app=Airmail title="[^Airmail]" manage=off
 yabai -m rule --add app="IntelliJ IDEA" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title=".*~/Documents/Develop.*" manage=on
+yabai -m rule --add app="JollysFastVNC" manage=off
+yabai -m rule --add app="ISL Light" manage=off
+yabai -m rule --add app="XLD" manage=off
+yabai -m rule --add app="Finder" manage=off
 
 echo "yabai configuration loaded.."
