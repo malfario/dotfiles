@@ -128,11 +128,11 @@ alt - x : yabai -m space --mirror x-axis
 # alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
-# cmd + alt - d : yabai -m query --windows --space \
-#                 | jq -r '.[] | select(."zoom-parent" == 1 and .focused == 0).id' \
-#                 | xargs -I{} yabai -m window {} --toggle zoom-parent;\
-#                 yabai -m window --toggle zoom-parent
-cmd + alt - d : yabai -m window --toggle zoom-parent
+# cmd + alt - d : yabai -m window --toggle zoom-parent
+cmd + alt - d : yabai -m window --toggle zoom-parent; \
+                yabai -m query --windows --space \
+                | jq -r '.[] | select(."zoom-parent" == 1 and .focused == 0).id' \
+                | xargs -I{} yabai -m window {} --toggle zoom-parent
 
 # toggle window fullscreen zoom
 cmd + alt - f : yabai -m window --toggle zoom-fullscreen
