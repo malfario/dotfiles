@@ -9,11 +9,16 @@ endif
 
 call plug#begin(plugdir)
 
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
+
 Plug 'vim-syntastic/syntastic'
 Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/gv.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'dbakker/vim-projectroot'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-vinegar'
