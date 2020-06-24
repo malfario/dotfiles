@@ -154,7 +154,9 @@ nmap <silent> <leader>feR :so $MYVIMRC<CR>
 
 " Spacemacs bindings
 nmap <silent> <leader>fs :w<CR>
-nmap <silent> <leader>qq :q<CR>
+nmap <silent> <leader>qq :confirm qa<CR>
+nmap <silent> <leader>qQ :qa!<CR>
+nmap <silent> <leader>qs :xa<CR>
 nmap <silent> <leader>bb :ls<CR>
 nmap <silent> <leader>bd :bd<CR>
 nmap <silent> <leader>sc :noh<CR>
