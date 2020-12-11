@@ -42,5 +42,6 @@ yabai -m rule --add app="XLD" manage=off
 yabai -m rule --add app="Finder" manage=off
 yabai -m rule --add app="Colibri" title="Colibri Preferences" manage=off
 yabai -m rule --add app="Meta" manage=off
+yabai -m rule --add app="Sound Control" manage=off
 
 echo "yabai configuration loaded.."
