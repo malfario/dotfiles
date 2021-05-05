@@ -1,0 +1,21 @@
+[core]
+	editor = vim
+	excludesfile = ~/.cvsignore
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  pl = pull --rebase
+	push-all = !git remote | xargs -L1 git push
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[fetch]
+	prune = true
