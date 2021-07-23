@@ -1,30 +1,21 @@
 ### Global config
 
-# Enable nvim true color
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
+source "$HOME/.zsh-aliases"
+source "$HOME/.zsh-private"
 
-# Set default shell editor
-export EDITOR="vim"
+# Disable no match glob error
+unsetopt nomatch 
 
-# Set to this to use case-sensitive completion
-export CASE_SENSITIVE="true"
+# Init fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Disable oh-my-zsh auto-update
-export DISABLE_AUTO_UPDATE="true"
+### zgen setup (https://github.com/tarjoilija/zgen)
 
-### zgen config
-# mkdir ~/.zsh && curl -o ~/.zsh/zgen.zsh https://raw.githubusercontent.com/tarjoilija/zgen/master/zgen.zsh
 source "$HOME/.zsh/zgen.zsh"
 
 if ! zgen saved; then
-  # Use omz
+  # Load OMZ plugins
   zgen oh-my-zsh
-
-  # Load plugins
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-completions
-  zgen load zsh-users/zsh-autosuggestions
-
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/osx
   zgen oh-my-zsh plugins/brew
@@ -32,19 +23,14 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/vagrant
   zgen oh-my-zsh plugins/docker
 
-  # Default theme
-  zgen oh-my-zsh themes/daveverwer
+  # Load plugins from Github
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-autosuggestions
 
-  # Apply config
+  # Generate init script
   zgen save
 fi
 
-# Disable no match glob error
-unsetopt nomatch 
-
-# Zsh-autosuggest color
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
-
-source "$HOME/.zsh-aliases"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+### Initialize starship prompt
+eval "$(starship init zsh)"

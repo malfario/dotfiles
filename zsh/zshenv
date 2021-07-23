@@ -1,7 +1,12 @@
-### Paths
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-# Hook for desk activation
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-
 export PATH=/usr/local/bin:$PATH
 export PIP_EXTRA_INDEX_URL=https://pypi.notin.net
+export TERM=xterm-color
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export EDITOR="vim"
+export CASE_SENSITIVE="true"
+
+# Disable oh-my-zsh auto-update
+export DISABLE_AUTO_UPDATE="true"
+
+# zsh-autosuggest color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'

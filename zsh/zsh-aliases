@@ -1,6 +1,8 @@
-alias ll="ls -lh"
+alias ls='lsd'
+alias ll='ls -lh'
 alias la="ls -a"
 alias lla="ls -la"
+alias lt='ls --tree'
 
 # git
 alias gco="git checkout"
@@ -8,9 +10,6 @@ alias gci="git commit"
 alias gst="git status"
 alias gb="git branch"
 alias gh="log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"
-
-# vim
-alias gvim="/usr/local/bin/mvim"
 
 # docker 
 alias dimg='docker images'
@@ -20,7 +19,3 @@ alias drmi='docker rmi'
 alias dlog='docker logs'
 alias drun='docker run'
 alias drmio='docker images | grep \<none\> | awk "{ print $3 }" | xargs docker rmi'
-
-# emacs
-alias emacs="/usr/local/bin/emacs"
-alias vim="/usr/local/bin/vim"
