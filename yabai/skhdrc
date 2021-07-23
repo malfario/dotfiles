@@ -1,5 +1,5 @@
 # open terminal
-cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -33,14 +33,14 @@ shift + alt - 0 : yabai -m space --balance
 
 # create desktop, move window and follow focus
 cmd + alt - m : yabai -m space --create && \
-                set index (yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index') && \
-                yabai -m window --space $index && \
-                yabai -m space --focus $index
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m window --space "${index}" && \
+                yabai -m space --focus "${index}"
 
 # create desktop and follow focus
 cmd + alt - n : yabai -m space --create && \
-                set index (yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index') && \
-                yabai -m space --focus $index
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m space --focus "${index}"
 
 # kill desktop
 cmd + alt - k : yabai -m space --destroy
