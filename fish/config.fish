@@ -1,25 +1,48 @@
-set -x EDITOR vim
+fish_add_path -U ~/go/bin ~/.local/bin ~/.poetry/bin ~/bin ~/.nimble/bin /usr/local/sbin
 
-# added by pipx (https://github.com/pipxproject/pipx)
-set -x PATH /Users/rleblic/.local/bin $PATH
+if status is-interactive
+  set -x TERM xterm-color
+  set -x EDITOR vim
 
-set -x PATH /Users/rleblic/.poetry/bin $PATH
+  # Setup LSD
+  alias ls=lsd
 
-set -x PATH /Users/rleblic/bin $PATH
-set -x PATH /Users/rleblic/.nimble/bin $PATH
+  # Set color theme
+  set -U fish_color_normal normal
+  set -U fish_color_command normal
+  set -U fish_color_quote 657b83
+  set -U fish_color_redirection 6c71c4
+  set -U fish_color_end 268bd2
+  set -U fish_color_error dc322f
+  set -U fish_color_param 839496
+  set -U fish_color_comment 586e75
+  set -U fish_color_match --background=brblue
+  set -U fish_color_selection white --bold --background=brblack
+  set -U fish_color_search_match bryellow --background=black
+  set -U fish_color_history_current --bold
+  set -U fish_color_operator 00a6b2
+  set -U fish_color_escape 00a6b2
+  set -U fish_color_cwd green
+  set -U fish_color_cwd_root red
+  set -U fish_color_valid_path --underline
+  set -U fish_color_autosuggestion 586e75
+  set -U fish_color_user brgreen
+  set -U fish_color_host normal
+  set -U fish_color_cancel -r
+  set -U fish_pager_color_completion B3A06D
+  set -U fish_pager_color_description B3A06D
+  set -U fish_pager_color_prefix cyan --underline
+  set -U fish_pager_color_progress brwhite --background=cyan
 
-set -x PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin $PATH
+  # Setup pyenv
+  pyenv init --path | source
+  pyenv init - | source
 
-set -x TERM xterm-color
+  # Setup starship
+  eval (starship init fish)
 
-status --is-interactive; and source (pyenv init -|psub)
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-
-alias ls=lsd
-
-eval (starship init fish)
-
-# Load private config
-if [ -f $HOME/.config/fish/private.fish ]
-  source $HOME/.config/fish/private.fish
+  # Load private config
+  if [ -f $HOME/.config/fish/private.fish ]
+    source $HOME/.config/fish/private.fish
+  end
 end
