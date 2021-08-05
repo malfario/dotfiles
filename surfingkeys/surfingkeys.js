@@ -2,7 +2,7 @@
 map('gt', 'T');
 
 // Disable surfingkeys for current domain
-map('<Ctrl-i>', '<Alt-s>');
+// map('<Ctrl-i>', '<Alt-s>');
 
 map('<Ctrl-d>', 'd');
 map('d', 'x');
