@@ -24,3 +24,5 @@ unmap('E');
 
 map('<Ctrl-g>', '<Ctrl-h>');
 unmap('<Ctrl-h>');
+
+addSearchAliasX('f', 'filmaffinity', 'https://www.filmaffinity.com/es/search.php?stext=')
