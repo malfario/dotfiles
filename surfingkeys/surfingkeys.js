@@ -26,3 +26,5 @@ map('<Ctrl-g>', '<Ctrl-h>');
 unmap('<Ctrl-h>');
 
 addSearchAliasX('f', 'filmaffinity', 'https://www.filmaffinity.com/es/search.php?stext=')
+addSearchAliasX('t', 'tidal', 'https://listen.tidal.com/search?q=')
+
