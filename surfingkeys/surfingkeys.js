@@ -1,3 +1,9 @@
+const {
+    map,
+    unmap,
+    addSearchAlias,
+} = api;
+
 // an example to replace `T` with `gt`, click `Default mappings` to see how `T` works.
 api.map('gt', 'T');
 
@@ -25,6 +31,6 @@ api.unmap('E');
 api.map('<Ctrl-g>', '<Ctrl-h>');
 api.unmap('<Ctrl-h>');
 
-api.addSearchAliasX('f', 'filmaffinity', 'https://www.filmaffinity.com/es/search.php?stext=')
-api.addSearchAliasX('t', 'tidal', 'https://listen.tidal.com/search?q=')
-
+api.addSearchAlias('f', 'filmaffinity', 'https://www.filmaffinity.com/es/search.php?stext=');
+api.addSearchAlias('t', 'tidal', 'https://listen.tidal.com/search?q=');
+  
