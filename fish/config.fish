@@ -1,8 +1,11 @@
 fish_add_path -U ~/go/bin ~/.local/bin ~/.poetry/bin ~/bin ~/.nimble/bin /usr/local/sbin
 
 if status is-interactive
-  set -x TERM xterm-color
+  set -x TERM xterm-256color
   set -x EDITOR vim
+
+  # Always use bat
+  alias cat bat
 
   # Setup LSD
   alias ls=lsd
@@ -37,6 +40,9 @@ if status is-interactive
   # Setup pyenv
   pyenv init --path | source
   pyenv init - | source
+
+  # Setup rbenv
+  source (rbenv init -|psub)
 
   # Setup starship
   eval (starship init fish)
