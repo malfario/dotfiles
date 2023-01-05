@@ -10,3 +10,4 @@ export DISABLE_AUTO_UPDATE="true"
 
 # zsh-autosuggest color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
+. "$HOME/.cargo/env"
