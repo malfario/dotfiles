@@ -1,8 +1,9 @@
-fish_add_path -U ~/go/bin ~/.local/bin ~/.poetry/bin ~/bin ~/.nimble/bin /usr/local/sbin
+fish_add_path -U ~/go/bin ~/.local/bin ~/.poetry/bin ~/bin ~/.nimble/bin /usr/local/sbin /usr/local/bin
 
 if status is-interactive
-  set -x TERM xterm-256color
   set -x EDITOR vim
+  set -x TERMINFO /usr/share/terminfo
+  set -x TERM xterm-256color
 
   # Always use bat
   alias cat bat
