@@ -11,6 +11,7 @@
   dump = cat-file -p
   pl = pull --rebase
 	push-all = !git remote | xargs -L1 git push
+	sw = switch
 [push]
 	default = simple
 [pull]
