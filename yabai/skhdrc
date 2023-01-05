@@ -1,3 +1,10 @@
+# App blacklist
+
+.blacklist [
+    "Royal TSX"
+    "Microsoft Remote Desktop"
+]
+
 # open terminal
 cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
@@ -43,9 +50,7 @@ cmd + alt - n : yabai -m space --create && \
                 yabai -m space --focus "${index}"
 
 # kill desktop
-ctrl + cmd + alt - k : index="$(yabai -m query --spaces --space | jq '.index')" && \
-                yabai -m space --destroy "${index}" && \
-                yabai -m space --focus "$((index-1))"
+ctrl + cmd + alt - k : yabai -m space --focus prev && sleep 0.01 && yabai -m space recent --destroy
 
 # fast focus desktop
 cmd + alt - x : yabai -m space --focus recent
@@ -169,3 +174,13 @@ ctrl + alt - d : yabai -m space --layout float
 # Avoid hiding windows
 cmd - h : false
 cmd + alt - h : false
+
+# stack support
+ctrl - n : yabai -m window --focus stack.next
+ctrl - p : yabai -m window --focus stack.prev
+ctrl - x : yabai -m window --focus stack.recent
+
+cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
