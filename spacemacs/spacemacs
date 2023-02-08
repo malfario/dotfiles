@@ -70,7 +70,8 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      ;; version-control
-     ;; osx
+     (osx :variables osx-option-as 'meta
+                     osx-right-option-as 'none)
      treemacs)
 
    ;; List of additional packages that will be installed without being wrapped
