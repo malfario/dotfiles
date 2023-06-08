@@ -1,5 +1,12 @@
-# App blacklist
+# modes
+:: default : yabai -m config active_window_border_color 0xff775759
+:: disabled : yabai -m config active_window_border_color 0xff24ccaa
 
+# add hotkey for disable/enable skhd
+cmd - x -> ; disabled
+disabled < cmd - x -> ; default
+
+# app blacklist
 .blacklist [
     "Royal TSX"
     "Microsoft Remote Desktop"
