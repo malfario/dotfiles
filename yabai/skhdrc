@@ -183,9 +183,9 @@ cmd - h : false
 cmd + alt - h : false
 
 # stack support
-ctrl - n : yabai -m window --focus stack.next
-ctrl - p : yabai -m window --focus stack.prev
-ctrl - x : yabai -m window --focus stack.recent
+# ctrl - n : yabai -m window --focus stack.next
+# ctrl - p : yabai -m window --focus stack.prev
+#ctrl - x : yabai -m window --focus stack.recent
 
 cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
