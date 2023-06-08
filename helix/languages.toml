@@ -1,0 +1,13 @@
+[[language]]
+name = "rust"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language.config]
+checkOnSave = { command = "clippy" }
+
+[[language]]
+name = "python"
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = true
