@@ -4,6 +4,7 @@ if status is-interactive
   set -x EDITOR vim
   set -x TERMINFO /usr/share/terminfo
   set -x TERM xterm-256color
+  set -x SHELL /usr/local/bin/fish
 
   # Always use bat
   alias cat bat
@@ -39,11 +40,11 @@ if status is-interactive
   set -U fish_pager_color_progress brwhite --background=cyan
 
   # Setup pyenv
-  pyenv init --path | source
-  pyenv init - | source
+  eval "$(pyenv init --path)"
+  # pyenv init - | source
 
   # Setup rbenv
-  source (rbenv init -|psub)
+  # source (rbenv init -|psub)
 
   # Setup starship
   eval (starship init fish)
