@@ -23,3 +23,5 @@
 	prune = true
 [init]
 	defaultBranch = master
+[credential]
+	helper = osxkeychain
