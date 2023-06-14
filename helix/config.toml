@@ -2,8 +2,11 @@ theme = "onedark"
 
 [editor]
 line-number = "relative"
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
 select = "underline"
 
+[editor.indent-guides]
+render = true
