@@ -1,10 +1,10 @@
 # modes
-:: default : yabai -m config active_window_border_color 0xff775759
-:: disabled : yabai -m config active_window_border_color 0xff24ccaa
+:: default : terminal-notifier -message 'Yabai enabled'
+:: disabled : terminal-notifier -message 'Yabai disabled, re-enable with CTRL+ALT-X'
 
 # add hotkey for disable/enable skhd
-cmd - x -> ; disabled
-disabled < cmd - x -> ; default
+ctrl + alt - x -> ; disabled
+disabled < ctrl + alt - x -> ; default
 
 # app blacklist
 .blacklist [
