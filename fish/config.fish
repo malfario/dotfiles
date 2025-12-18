@@ -22,6 +22,12 @@ if status is-interactive
     # Setup LSD
     alias ls=lsd
 
+    alias claude="/Users/rleblic/.claude/local/claude"
+    alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+    alias lazyvim='NVIM_APPNAME=nvim.lazy nvim'
+    alias astrovim='NVIM_APPNAME=nvim.astro nvim'
+    alias n=lazyvim
+
     # Set color theme
     set -U fish_color_normal normal
     set -U fish_color_command normal
