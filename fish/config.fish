@@ -50,7 +50,7 @@ if status is-interactive
     set -U fish_pager_color_progress brwhite --background=cyan
 
     # Setup pyenv
-    eval "$(pyenv init --path)"
+    # eval "$(pyenv init --path)"
     # pyenv init - | source
 
     # Setup rbenv
@@ -64,5 +64,10 @@ if status is-interactive
         source $HOME/.config/fish/private.fish
     end
 
-    direnv hook fish | source
+    # direnv hook fish | source
+
+    # Added by OrbStack: command-line tools and integration
+    # This won't be added again if you remove it.
+    # source ~/.orbstack/shell/init.fish 2>/dev/null || :
+
 end
