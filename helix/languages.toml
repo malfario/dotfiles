@@ -1,13 +1,80 @@
 [[language]]
 name = "rust"
 
-# [language-server.rust-analyzer.config.check]
-# command = "clippy"
+[language-server.rust-analyzer.config.check]
+command = "clippy"
 
 # [language.config]
 # checkOnSave = { command = "clippy" }
 
+########
+# Python
+#
+# Ruff lsp
+# https://docs.astral.sh/ruff/configuration/
+# https://docs.astral.sh/ruff/editors/setup/#helix
+#
+# Pylsp
+# https://github.com/python-lsp/python-lsp-server
+# https://github.com/python-lsp/pylsp-mypy
+# https://github.com/python-lsp/python-lsp-black
+# https://github.com/python-lsp/python-lsp-ruff
+########
+
 [[language]]
 name = "python"
-formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
+language-servers = ["ruff", "pylsp"]
+
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+[language-server.zuban]
+command = "zuban"
+args = ["server"]
+
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ruff.config.settings]
+lineLength = 88
+
+[language-server.ruff.config.settings.format]
+# quoteStyle = "preserve"  # Not a LSP setting!
+preview = false
+
+######
+# Deno
+######
+
+[[language]]
+name = "typescript"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc", "package.json"]
+auto-format = true
+language-servers = ["deno-lsp"]
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+unstable = true
+suggest.imports.hosts = { "https://deno.land" = true }
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled  = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }

@@ -3,6 +3,10 @@ theme = "onedark"
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+true-color = true
+
+[editor.soft-wrap]
+enable = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -10,3 +14,34 @@ select = "underline"
 
 [editor.indent-guides]
 render = true
+
+[keys.normal]
+g = { d = "goto_definition", i = "goto_implementation", r = "goto_reference", t = "goto_type_definition" }
+C-g = [
+  ":write-all",
+  ":insert-output lazygit >/dev/tty",
+  ":redraw",
+  ":reload-all"
+]
+C-r = [
+    ":write-all",
+    ":insert-output scooter --no-stdin >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
+
+[keys.normal.space]
+b = { d = ":buffer-close", b = "buffer_picker" }
+f = { f = "file_picker", s = ":write", t = ":toggle-option auto-format" }
+q = { q = ":quit" }
+t = { w = ":toggle whitespace.render all none" }
+e = [
+  ":sh rm -f /tmp/unique-file-h21a434",
+  ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
+  ":insert-output echo \"x1b[?1049h\" > /dev/tty",
+  ":open %sh{cat /tmp/unique-file-h21a434}",
+  ":redraw",
+]
+
+[keys.insert]
+C-space = "completion"
