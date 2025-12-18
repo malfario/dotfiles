@@ -1,3 +1,5 @@
+.shell "/bin/sh"
+
 # modes
 :: default : terminal-notifier -message 'Yabai enabled'
 :: disabled : terminal-notifier -message 'Yabai disabled, re-enable with CTRL+ALT-X'
