@@ -4,6 +4,7 @@ fish_add_path -U /run/current-system/sw/bin
 
 if status is-interactive
     set -x EDITOR hx
+    set -x GIT_EDITOR hx
     # set -x TERMINFO /usr/share/terminfo
     # set -x TERM xterm-256color
     # set -x SHELL /usr/local/bin/fish
