@@ -25,3 +25,5 @@
 	defaultBranch = master
 [credential]
 	helper = osxkeychain
+[user]
+	name = Rafa Leblic
