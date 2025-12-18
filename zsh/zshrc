@@ -6,35 +6,37 @@ source "$HOME/.zsh-private"
 # Disable no match glob error
 unsetopt nomatch 
 
-# Init fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ -o interactive ]]; then
+  # Init fuzzy finder
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-### zgen setup (https://github.com/tarjoilija/zgen)
+  ### zgen setup (https://github.com/tarjoilija/zgen)
 
-source "$HOME/.zsh/zgen.zsh"
+  source "$HOME/.zsh/zgen.zsh"
 
-if ! zgen saved; then
-  # Load OMZ plugins
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/osx
-  zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/lein
-  zgen oh-my-zsh plugins/vagrant
-  zgen oh-my-zsh plugins/docker
+  if ! zgen saved; then
+    # Load OMZ plugins
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/osx
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/lein
+    zgen oh-my-zsh plugins/vagrant
+    zgen oh-my-zsh plugins/docker
 
-  # Load plugins from Github
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-completions
-  zgen load zsh-users/zsh-autosuggestions
+    # Load plugins from Github
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-completions
+    zgen load zsh-users/zsh-autosuggestions
 
-  # Generate init script
-  zgen save
+    # Generate init script
+    zgen save
+  fi
+
+  ### Initialize starship prompt
+  eval "$(starship init zsh)"
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
-
-### Initialize starship prompt
-eval "$(starship init zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
