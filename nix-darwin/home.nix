@@ -7,6 +7,7 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 
   home.sessionVariables = {
