@@ -1,12 +1,20 @@
 fish_add_path -U ~/go/bin ~/.local/bin ~/.poetry/bin ~/bin ~/.nimble/bin /usr/local/sbin /usr/local/bin
-fish_add_path -U ~/adb-fastboot/platform-tools
 fish_add_path -U ~/.fish/bin
+fish_add_path -U /run/current-system/sw/bin
 
 if status is-interactive
     set -x EDITOR hx
     # set -x TERMINFO /usr/share/terminfo
     # set -x TERM xterm-256color
     # set -x SHELL /usr/local/bin/fish
+    set -x ANDROID_HOME ~/Library/Android/sdk
+
+    fish_add_path -U ~/adb-fastboot/platform-tools
+    fish_add_path -U ~/dev/flutter-sdk/flutter/bin
+    fish_add_path -U $ANDROID_HOME/cmdline-tools/latest/bin
+    fish_add_path -U $ANDROID_HOME/cmdline-tools/latest
+    fish_add_path -U $ANDROID_HOME/tools/bin
+    fish_add_path -U $ANDROID_HOME/platform-tools
 
     # Always use bat
     alias cat bat
