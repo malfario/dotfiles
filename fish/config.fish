@@ -21,13 +21,13 @@ if status is-interactive
     alias cat bat
 
     # Setup LSD
-    alias ls=lsd
+    alias ls lsd
 
-    alias claude="/Users/rleblic/.claude/local/claude"
-    alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
-    alias lazyvim='NVIM_APPNAME=nvim.lazy nvim'
-    alias astrovim='NVIM_APPNAME=nvim.astro nvim'
-    alias n=lazyvim
+    alias claude "/Users/rleblic/.claude/local/claude"
+    alias nvim-kickstart 'NVIM_APPNAME="nvim-kickstart" nvim'
+    alias lazyvim 'NVIM_APPNAME=nvim.lazy nvim'
+    alias astrovim 'NVIM_APPNAME=nvim.astro nvim'
+    alias n lazyvim
 
     # Set color theme
     set -U fish_color_normal normal
@@ -64,7 +64,7 @@ if status is-interactive
     # source (rbenv init -|psub)
 
     # Setup starship
-    eval (starship init fish)
+    # eval (starship init fish)
 
     # Load private config
     if [ -f $HOME/.config/fish/private.fish ]
