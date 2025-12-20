@@ -15,8 +15,12 @@ disabled < ctrl + alt - x -> ; default
 ]
 
 # open terminal
-#cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
-cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty -d ~ &> /dev/null
+# cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
+# cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty -d ~ &> /dev/null
+# cmd + alt - return : kitty --single-instance -d ~ &> /dev/null
+cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+
 
 # focus window
 alt - h : yabai -m window --focus west
