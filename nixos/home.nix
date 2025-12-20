@@ -11,7 +11,6 @@
   home.packages = with pkgs; [
     scooter
     grc
-    jetbrains-mono
     nerd-fonts.jetbrains-mono
   ];
 
