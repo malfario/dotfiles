@@ -3,12 +3,16 @@
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
+
+  fonts.fontconfig.enable = true;
   
   home.username = "rleblic";
   home.homeDirectory = "/home/rleblic";
   home.packages = with pkgs; [
     scooter
     grc
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   home.sessionVariables = {
@@ -60,9 +64,17 @@
 
   programs.alacritty = {
     enable = true;
+    theme = "one_dark";
     settings = {
+      font = {
+        normal.family = "JetBrainsMono Nerd Font";
+      };
       window = {
         decorations = "none";
+        padding = {
+          x = 8;
+          y = 8;
+        };
       };
     };
   };
