@@ -42,7 +42,6 @@
             y = 8;
           };
         };
-        terminal.shell = "fish";
         font = {
           normal.family = "JetBrainsMono Nerd Font";
           size = 14.0;
