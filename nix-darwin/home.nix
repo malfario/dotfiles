@@ -14,10 +14,29 @@
   home.sessionVariables = {
     EDITOR = "hx";
     GIT_EDITOR = "hx";
-    SHELL = "fish";
+    SHELL = "/etc/profiles/per-user/rleblic/bin/fish";
   };
 
   programs = {
+    kitty = {
+      enable = true;
+      shellIntegration.enableFishIntegration = true;
+      themeFile = "OneDark";
+      font = {
+        name = "Menlo";
+        size = 12.0;
+      };
+      settings = {
+        macos_option_as_alt = "left";
+        macos_show_window_title_in = "none";
+        window_margin_width = 8.0;
+        window_padding_width = 0.0;
+        hide_window_decorations = true;
+        macos_quit_when_last_window_closed = true;
+        adjust_column_width = -1;
+        cursor_trail = 100;
+      };
+    };
     fish = {
       enable = true;
       plugins = [
