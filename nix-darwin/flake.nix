@@ -41,6 +41,7 @@
       users.users.rleblic = {
         home = "/Users/rleblic";
         description = "Rafa";
+        shell = pkgs.fish;
         #extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
         ];
