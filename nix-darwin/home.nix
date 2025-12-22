@@ -15,7 +15,6 @@
   home.sessionVariables = {
     EDITOR = "hx";
     GIT_EDITOR = "hx";
-    SHELL = "/etc/profiles/per-user/rleblic/bin/fish";
   };
 
   programs = {
