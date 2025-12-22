@@ -17,12 +17,12 @@
     GIT_EDITOR = "hx";
   };
 
-  programs = {
-    lsd = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+  imports = [
+    ./programs/lsd.nix
+    ./programs/carapace.nix
+  ];
 
+  programs = {
     kitty = {
       enable = true;
       shellIntegration.enableFishIntegration = true;
