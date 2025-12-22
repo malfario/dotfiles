@@ -18,6 +18,11 @@
   };
 
   programs = {
+    lsd = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     kitty = {
       enable = true;
       shellIntegration.enableFishIntegration = true;
