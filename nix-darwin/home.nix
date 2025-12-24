@@ -20,6 +20,7 @@
   imports = [
     ./programs/lsd.nix
     ./programs/carapace.nix
+    ./programs/zoxide.nix
   ];
 
   programs = {
@@ -40,7 +41,7 @@
         macos_quit_when_last_window_closed = true;
         adjust_column_width = -1;
         cursor_trail = 100;
-        text_composition_strategy = "legacy";
+        # text_composition_strategy = "legacy";
       };
     };
 
