@@ -15,12 +15,12 @@ disabled < ctrl + alt - x -> ; default
 ]
 
 # open terminal
-# cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
+# cmd + alt - return : ~/Applications/Home\ Manager\ Apps/kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
+# cmd + alt - return : ~/Applications/Home\ Manager\ Apps/Alacritty.app/Contents/MacOS/alacritty --working-directory ~ &> /dev/null
+cmd + alt - return : /Applications/Ghostty.app/Contents/MacOS/ghostty &> /dev/null
 # cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty -d ~ &> /dev/null
-# cmd + alt - return : kitty --single-instance -d ~ &> /dev/null
-cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
-
+ctrl + alt + cmd - r : yabai --restart-service"
 
 # focus window
 alt - h : yabai -m window --focus west
