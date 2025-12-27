@@ -21,6 +21,7 @@
     ./programs/lsd.nix
     ./programs/carapace.nix
     ./programs/zoxide.nix
+    ./programs/atuin.nix
   ];
 
   programs = {
