@@ -17,8 +17,9 @@ disabled < ctrl + alt - x -> ; default
 # open terminal
 # cmd + alt - return : ~/Applications/Home\ Manager\ Apps/kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 # cmd + alt - return : ~/Applications/Home\ Manager\ Apps/Alacritty.app/Contents/MacOS/alacritty --working-directory ~ &> /dev/null
-cmd + alt - return : /Applications/Ghostty.app/Contents/MacOS/ghostty &> /dev/null
+# cmd + alt - return : /Applications/Ghostty.app/Contents/MacOS/ghostty &> /dev/null
 # cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty -d ~ &> /dev/null
+cmd + alt - return : open -a Ghostty
 
 ctrl + alt + cmd - r : yabai --restart-service"
 
