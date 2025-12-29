@@ -22,6 +22,7 @@
     ./programs/carapace.nix
     ./programs/zoxide.nix
     ./programs/atuin.nix
+    ./programs/aerospace.nix
   ];
 
   programs = {
