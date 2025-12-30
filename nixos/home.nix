@@ -16,7 +16,6 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
-    SHELL = "fish";
   };
 
   home.stateVersion = "25.11";
@@ -96,6 +95,10 @@
 
   programs.zellij = {
     enable = true;
+    enableFishIntegration = true;
+    settings = {
+      theme = "onedark";
+    };
   };
 
   programs.helix = {

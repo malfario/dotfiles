@@ -45,6 +45,7 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
+  programs.fish.enable = true;
   programs.niri.enable = true;
   programs.dms-shell.enable = true;
   # Enable the X11 windowing system.
@@ -90,6 +91,7 @@
     isNormalUser = true;
     description = "Rafa";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
