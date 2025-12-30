@@ -35,6 +35,23 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
+      system.primaryUser = "rleblic";
+
+      services.spacebar ={
+        enable = true;
+        package = pkgs.spacebar;
+        config = {
+          text_font =         ''"Helvetica Neue:Bold:12.0"'';
+          icon_font =         ''"FontAwesome:Regular:12.0"'';
+          background_color =  "0xff262626";
+          foreground_color =  "0xffa8a8a8";
+          space_icon_strip =  "1 2 3 4 5 6 7 8 9 10";
+          power_icon_strip =  " ";
+          space_icon =        "";
+          clock_icon =        "";
+        };
+      };
+
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
