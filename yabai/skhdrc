@@ -21,7 +21,7 @@ disabled < ctrl + alt - x -> ; default
 # cmd + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty -d ~ &> /dev/null
 cmd + alt - return : open -a Ghostty
 
-ctrl + alt + cmd - r : yabai --restart-service"
+ctrl + alt + cmd - r : yabai --restart-service
 
 # focus window
 alt - h : yabai -m window --focus west
