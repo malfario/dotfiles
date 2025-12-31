@@ -1,9 +1,5 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [
-    inputs.zen-browser.homeModules.beta
-  ];
-
   fonts.fontconfig.enable = true;
   
   home.username = "rleblic";
@@ -20,6 +16,11 @@
 
   home.stateVersion = "25.11";
   programs.home-manager.enable = true;
+
+  imports = [
+    inputs.zen-browser.homeModules.beta
+    ./programs/zellij.nix
+  ];
 
   programs.zen-browser.enable = true;
 
