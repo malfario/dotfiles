@@ -95,14 +95,6 @@
     };
   };
 
-  programs.zellij = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      theme = "onedark";
-    };
-  };
-
   programs.helix = {
     enable = true;
     settings = {
