@@ -61,6 +61,8 @@
         shell = pkgs.fish;
         #extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
+          vscode-langservers-extracted
+          lima
         ];
       };
     };
