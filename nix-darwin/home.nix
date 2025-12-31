@@ -23,6 +23,7 @@
     ./programs/zoxide.nix
     ./programs/atuin.nix
     ./programs/aerospace.nix
+    ./programs/zellij.nix
   ];
 
   programs = {
