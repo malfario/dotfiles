@@ -41,8 +41,8 @@
         enable = true;
         package = pkgs.spacebar;
         config = {
-          text_font =         ''"Helvetica Neue:Bold:12.0"'';
-          icon_font =         ''"FontAwesome:Regular:12.0"'';
+          text_font =         ''"Helvetica Neue:Bold:10.0"'';
+          icon_font =         ''"FontAwesome:Regular:10.0"'';
           background_color =  "0xff262626";
           foreground_color =  "0xffa8a8a8";
           space_icon_strip =  "1 2 3 4 5 6 7 8 9 10";
