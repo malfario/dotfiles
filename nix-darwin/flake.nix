@@ -49,6 +49,7 @@
           power_icon_strip =  " ";
           space_icon =        "";
           clock_icon =        "";
+          clock_format =      ''"%d/%m/%y %R"'';
         };
       };
 
