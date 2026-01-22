@@ -203,4 +203,4 @@ cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --
 cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
 cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
 
-cmd + alt - r : yabai -m query --windows | jq -r '.[] | select(.app == "Roon") | .id' | xargs -I{} yabai -m window --focus {}
+cmd + alt - r : yabai -m query --windows | jq -r '.[] | select(.app == "Roon") | .space' | xargs -I{} yabai -m space --focus {}
