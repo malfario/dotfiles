@@ -18,6 +18,7 @@
         vim
         profanity
         scooter
+        nh
       ];
 
       # Necessary for using flakes on this system.
