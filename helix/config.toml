@@ -45,3 +45,4 @@ e = [
 
 [keys.insert]
 C-space = "completion"
+j = { k = "normal_mode" }
