@@ -10,6 +10,7 @@
     nerd-fonts.jetbrains-mono
     jetbrains-mono
     grc
+    devenv
   ];
 
   home.sessionVariables = {
