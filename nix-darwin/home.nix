@@ -11,6 +11,7 @@
     jetbrains-mono
     grc
     devenv
+    p7zip-rar
   ];
 
   home.sessionVariables = {
