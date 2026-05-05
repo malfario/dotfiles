@@ -57,6 +57,8 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
+      nixpkgs.config.allowUnfree = true;
+
       users.users.rleblic = {
         home = "/Users/rleblic";
         description = "Rafa";
