@@ -12,6 +12,7 @@
     grc
     devenv
     p7zip-rar
+    ghostty-bin
   ];
 
   home.sessionVariables = {
@@ -26,7 +27,6 @@
     ./programs/atuin.nix
     ./programs/aerospace.nix
     ./programs/zellij.nix
-    ./programs/ghostty.nix
   ];
 
   programs = {
