@@ -1,15 +1,21 @@
 {
   description = "Example nix-darwin system flake";
 
+  nixConfig = {
+    extra-trusted-substituters = ["https://cache.flox.dev"];
+    extra-trusted-public-keys = ["flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flox.url = "github:flox/flox/latest";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flox }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -19,12 +25,20 @@
         # profanity
         scooter
         nh
+        inputs.flox.packages.${pkgs.system}.default
       ];
 
       # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      nix.settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
+      nix.settings = {
+        experimental-features = "nix-command flakes";
+        extra-nix-path = "nixpkgs=flake:nixpkgs";
+        substituters = [
+          "https://cache.flox.dev"
+        ];
+        trusted-public-keys = [
+          "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
+        ];
+      };
 
       # Enable alternative shell support in nix-darwin.
       programs.fish.enable = true;
