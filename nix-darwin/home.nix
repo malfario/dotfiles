@@ -26,6 +26,7 @@
     ./programs/atuin.nix
     ./programs/aerospace.nix
     ./programs/zellij.nix
+    ./programs/ghostty.nix
   ];
 
   programs = {
