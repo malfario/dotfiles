@@ -13,9 +13,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flox.url = "github:flox/flox/latest";
+    devbox.url = "github:jetify-com/devbox/latest";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flox }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flox, devbox }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -26,6 +27,7 @@
         scooter
         nh
         inputs.flox.packages.${pkgs.system}.default
+        inputs.devbox.packages.${pkgs.system}.default
       ];
 
       # Necessary for using flakes on this system.
