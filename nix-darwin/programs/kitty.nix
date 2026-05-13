@@ -20,6 +20,7 @@
     };
     keybindings = {
       "ctrl+shift+w" = "no_op";
+      "ctrl+shift+q" = "no_op";
     };
   };
 }
