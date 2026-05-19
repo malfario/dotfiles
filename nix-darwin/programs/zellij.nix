@@ -1,7 +1,7 @@
 {
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
+    # enableFishIntegration = true;
     settings = {
       theme = "onedark";
       default_mode = "locked";
