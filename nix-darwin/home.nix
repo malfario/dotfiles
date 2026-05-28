@@ -13,6 +13,7 @@
     devenv
     p7zip-rar
     ghostty-bin
+    profanity
   ];
 
   home.sessionVariables = {

@@ -23,7 +23,6 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
         vim
-        # profanity
         scooter
         nh
         inputs.flox.packages.${pkgs.system}.default
