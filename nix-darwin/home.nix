@@ -39,6 +39,9 @@
         { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
         { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       ];
+      interactiveShellInit = ''
+        devenv hook fish | source
+      '';
     };
 
     alacritty = {
