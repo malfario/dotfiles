@@ -1,6 +1,7 @@
 { config, inputs, pkgs, ... }:
 {
   programs.home-manager.enable = true;
+  programs.git.enable = true;
 
   home.username = "rleblic";
   home.homeDirectory = "/Users/rleblic";
@@ -24,6 +25,7 @@
   };
 
   imports = [
+    inputs.hunk.homeManagerModules.default
     ./programs/lsd.nix
     ./programs/carapace.nix
     ./programs/zoxide.nix
@@ -31,6 +33,7 @@
     ./programs/aerospace.nix
     ./programs/zellij.nix
     ./programs/kitty.nix
+    ./programs/hunk.nix
   ];
 
   programs = {
