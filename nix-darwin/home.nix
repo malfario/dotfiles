@@ -34,6 +34,7 @@
     ./programs/zellij.nix
     ./programs/kitty.nix
     ./programs/hunk.nix
+    ./programs/jujutsu.nix
   ];
 
   programs = {
