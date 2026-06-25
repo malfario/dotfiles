@@ -17,6 +17,7 @@
     profanity
     doggo
     pi-coding-agent
+    uv
   ];
 
   home.sessionVariables = {
