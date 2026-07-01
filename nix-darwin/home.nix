@@ -23,11 +23,13 @@
   home.sessionVariables = {
     EDITOR = "hx";
     GIT_EDITOR = "hx";
+    XDG_CONFIG_HOME = "$HOME/.config";
   };
 
   imports = [
     inputs.hunk.homeManagerModules.default
     ./programs/lsd.nix
+    ./programs/eza.nix
     ./programs/carapace.nix
     ./programs/zoxide.nix
     ./programs/atuin.nix
