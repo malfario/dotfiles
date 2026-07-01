@@ -1,7 +1,7 @@
 {
   programs.hunk = {
     enable = true;
-    enableGitIntegration = true; # Optional: set hunk as default git pager
+    enableGitIntegration = false; # Optional: set hunk as default git pager
     settings = {
       theme = "graphite";
       mode = "split";
