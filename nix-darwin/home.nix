@@ -18,6 +18,7 @@
     doggo
     pi-coding-agent
     uv
+    skopeo
   ];
 
   home.sessionVariables = {
