@@ -1,6 +1,6 @@
 {
   programs.eza = {
-    enable = true;
+    enable = false;
     enableFishIntegration = true;
     icons = "auto";
     theme = {
