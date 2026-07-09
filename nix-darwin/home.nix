@@ -38,6 +38,7 @@
     ./programs/kitty.nix
     ./programs/hunk.nix
     ./programs/jujutsu.nix
+    ./programs/television.nix
   ];
 
   programs = {
