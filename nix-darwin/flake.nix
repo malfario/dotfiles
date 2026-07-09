@@ -80,7 +80,16 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        config.allowUnfree = true;
+        overlays = [
+          (_final: prev: {
+            lsd = prev.lsd.overrideAttrs (_: {
+              doCheck = false;
+            });
+          })
+        ];
+      };
 
       users.users.rleblic = {
         home = "/Users/rleblic";
