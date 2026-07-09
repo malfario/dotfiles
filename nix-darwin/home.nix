@@ -14,7 +14,6 @@
     devenv
     p7zip-rar
     ghostty-bin
-    profanity
     doggo
     pi-coding-agent
     uv
