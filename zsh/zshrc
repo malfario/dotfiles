@@ -8,7 +8,7 @@ unsetopt nomatch
 
 if [[ -o interactive ]]; then
   # Init fuzzy finder
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
   ### zgen setup (https://github.com/tarjoilija/zgen)
 
