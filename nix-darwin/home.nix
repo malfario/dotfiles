@@ -11,7 +11,8 @@
     nerd-fonts.jetbrains-mono
     jetbrains-mono
     grc
-    devenv
+    #devenv
+    inputs.devenv.packages.${pkgs.stdenv.hostPlatform.system}.default
     p7zip-rar
     ghostty-bin
     doggo
@@ -50,7 +51,8 @@
         { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       ];
       interactiveShellInit = ''
-        devenv hook fish | source
+        eval "$(/opt/homebrew/bin/brew shellenv fish)"       
+        # devenv hook fish | source
       '';
     };
 

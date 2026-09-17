@@ -1,11 +1,6 @@
 {
   description = "Example nix-darwin system flake";
 
-  nixConfig = {
-    extra-trusted-substituters = ["https://cache.flox.dev"];
-    extra-trusted-public-keys = ["flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="];
-  };
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
@@ -22,9 +17,10 @@
       url = "github:modem-dev/hunk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv.url = "github:cachix/devenv/v2.3.1";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flox, devbox, hunk }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flox, devbox, hunk, devenv }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -40,13 +36,21 @@
       # Necessary for using flakes on this system.
       nix.settings = {
         experimental-features = "nix-command flakes";
+        trusted-users = [
+          "rleblic"
+        ];        
         extra-nix-path = "nixpkgs=flake:nixpkgs";
-        substituters = [
+        extra-substituters = [
           "https://cache.flox.dev"
+          "https://devenv.cachix.org"
+          "https://cachix.cachix.org"
         ];
-        trusted-public-keys = [
+
+        extra-trusted-public-keys = [
           "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
-        ];
+          "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+          "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
+        ];        
       };
 
       # Enable alternative shell support in nix-darwin.
@@ -61,7 +65,7 @@
 
       system.primaryUser = "rleblic";
 
-      services.spacebar ={
+      services.spacebar = {
         enable = true;
         package = pkgs.spacebar;
         config = {
