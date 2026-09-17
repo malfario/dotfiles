@@ -17,6 +17,7 @@
       adjust_column_width = -1;
       cursor_trail = 100;
       # text_composition_strategy = "legacy";
+      shell = "fish";
     };
     keybindings = {
       "ctrl+shift+w" = "no_op";
