@@ -19,8 +19,8 @@
 
   imports = [
     inputs.zen-browser.homeModules.beta
-    ./programs/zellij.nix
-    ./programs/ghostty.nix
+    ../../modules/terminal/zellij.nix
+    ../../modules/terminal/ghostty.nix
   ];
 
   programs.zen-browser.enable = true;
