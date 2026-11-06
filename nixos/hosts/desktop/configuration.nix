@@ -3,15 +3,9 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/boot.nix
+    ../../modules/networking.nix
   ];
-
-  # Arranque UEFI
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Identificación y red
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
 
   # Localización
   time.timeZone = "Europe/Madrid";
@@ -33,13 +27,6 @@
   # Firmware y gráficos Intel
   hardware.enableRedistributableFirmware = true;
   hardware.graphics.enable = true;
-
-  # Virtualización por hardware
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelParams = [
-    "intel_iommu=on"
-    "iommu=pt"
-  ];
 
   # Herramientas iniciales
   environment.systemPackages = with pkgs; [
