@@ -6,6 +6,7 @@
     ../../modules/boot.nix
     ../../modules/networking.nix
     ../../modules/desktop.nix
+    ../../modules/virtualization/vfio.nix
   ];
 
   # Localización
