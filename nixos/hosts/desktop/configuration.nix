@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/boot.nix
     ../../modules/networking.nix
+    ../../modules/desktop.nix
   ];
 
   # Localización
@@ -26,7 +27,6 @@
 
   # Firmware y gráficos Intel
   hardware.enableRedistributableFirmware = true;
-  hardware.graphics.enable = true;
 
   # Herramientas iniciales
   environment.systemPackages = with pkgs; [
@@ -59,7 +59,7 @@
   ];
 
   nix.gc = {
-    automatic = true;
+    automatic = false; # NH gestiona clean y GC
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
@@ -68,5 +68,12 @@
 
   # Versión de compatibilidad del sistema
   system.stateVersion = "26.05";
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/rleblic/dotfiles";
+  };
 }
 

@@ -14,13 +14,19 @@
         home-manager.follows = "home-manager";
       };
     };
+    umbriel.url = "github:noctalia-dev/umbriel/cachix";
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, umbriel, noctalia, home-manager, ... } @ inputs:
   {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
+        specialArgs = {
+          inherit umbriel noctalia;
+        };
 
         modules = [
           ./nixos/hosts/desktop/configuration.nix
