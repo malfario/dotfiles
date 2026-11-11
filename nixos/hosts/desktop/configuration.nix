@@ -9,6 +9,7 @@
     ../../modules/virtualization/vfio.nix
     ../../modules/virtualization/libvirt.nix
     ../../modules/vendor-reset.nix
+    ../../modules/hermes.nix
   ];
 
   # Localización

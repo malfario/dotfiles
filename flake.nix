@@ -16,6 +16,7 @@
     };
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
   outputs = { self, nixpkgs, umbriel, noctalia, home-manager, ... } @ inputs:
@@ -29,6 +30,7 @@
         };
 
         modules = [
+          inputs.hermes-agent.nixosModules.default
           ./nixos/hosts/desktop/configuration.nix
         ];
       };
