@@ -29,7 +29,11 @@
   services.upower.enable = true;
 
   # Keyboard layout
-  services.xserver.xkb.layout = "us";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "mac";
+    model = "applealu_iso";
+  };
 
   environment.systemPackages = with pkgs; [
     kitty
