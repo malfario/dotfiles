@@ -51,8 +51,9 @@
         { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       ];
       interactiveShellInit = ''
-        eval "$(/opt/homebrew/bin/brew shellenv fish)"       
         # devenv hook fish | source
+        /opt/homebrew/bin/brew shellenv fish | source
+        /opt/homebrew/bin/mise activate fish | source
       '';
     };
 
