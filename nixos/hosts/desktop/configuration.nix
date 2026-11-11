@@ -7,6 +7,8 @@
     ../../modules/networking.nix
     ../../modules/desktop.nix
     ../../modules/virtualization/vfio.nix
+    ../../modules/virtualization/libvirt.nix
+    ../../modules/vendor-reset.nix
   ];
 
   # Localización
@@ -18,7 +20,11 @@
   # Usuario principal
   users.users.rleblic = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "libvirtd"
+    ];
   };
 
   users.mutableUsers = true;
@@ -77,4 +83,3 @@
     flake = "/home/rleblic/dotfiles";
   };
 }
-
