@@ -31,6 +31,7 @@
       diffutils
       coreutils
       jj
+      gh
     ];
 
     # Gateway y memoria.
@@ -43,6 +44,11 @@
       terminal = {
         backend = "local";
         timeout = 300;
+      };
+
+      model = {
+        provider = "openai-codex";
+        default = "gpt-6.1-sol";
       };
     };
 
