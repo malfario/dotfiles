@@ -37,6 +37,8 @@
   # Firmware y gráficos Intel
   hardware.enableRedistributableFirmware = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   # Herramientas iniciales
   environment.systemPackages = with pkgs; [
     git
@@ -48,7 +50,13 @@
     usbutils
     parted
     qemu
+    telegram-desktop
   ];
+
+  # Env vars
+  environment.variables = {
+    EDITOR = "hx";
+  };
 
   # Almacenamiento de máquinas virtuales
   fileSystems."/vm" = {

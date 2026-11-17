@@ -54,5 +54,21 @@
     stow
     ripgrep
     firefox
+    carapace
+    ghostty
+    zellij
+    fishPlugins.hydro
+    fishPlugins.fzf-fish
+    fzf
+    claude-code
   ];
+
+  fonts.enableDefaultPackages = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
+  fonts.fontconfig = {
+    subpixel.rgba = "rgb";
+  };
 }
