@@ -4,3 +4,5 @@ window-padding-y = 8
 confirm-close-surface = false
 quit-after-last-window-closed = true
 mouse-hide-while-typing = true
+font-family = "JetBrainsMono Nerd Font"
+font-size = 10
