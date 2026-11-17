@@ -4,10 +4,18 @@
   imports = [
     umbriel.nixosModules.default
     noctalia.nixosModules.default
+    ./media.nix
+    ./plex.nix
   ];
 
   # Graphics & acceleration
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
 
   # Wayland compositor
   programs.umbriel.enable = true;
