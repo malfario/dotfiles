@@ -57,14 +57,16 @@
           }
         ];
       };
-      homeConfigurations."rleblic@desktop" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    };
 
-          modules = [
-            ./home/users/rleblic/home.nix
-          ];
-        };
+    homeConfigurations = {
+      "rleblic@desktop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+        modules = [
+          ./nixos/hosts/desktop/home.nix
+        ];
+      };
     };
   };
 }
