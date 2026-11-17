@@ -29,6 +29,11 @@
     recommendedServices.enable = false;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # Desktop services
   services.pipewire = {
     enable = true;
