@@ -34,6 +34,8 @@
     enableFishIntegration = true;
   };
 
+  programs.chromium.enable = true;
+
   # Desktop services
   services.pipewire = {
     enable = true;
@@ -66,6 +68,7 @@
     fishPlugins.fzf-fish
     fzf
     claude-code
+    chromium
   ];
 
   fonts.enableDefaultPackages = true;
