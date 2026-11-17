@@ -26,6 +26,7 @@
       "networkmanager"
       "libvirtd"
     ];
+    shell = pkgs.fish;
   };
 
   users.mutableUsers = true;

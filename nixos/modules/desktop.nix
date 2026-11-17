@@ -17,6 +17,9 @@
     ];
   };
 
+  programs.fish.enable = true;
+
+
   # Wayland compositor
   programs.umbriel.enable = true;
 
