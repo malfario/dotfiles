@@ -69,6 +69,7 @@
     fzf
     claude-code
     chromium
+    google-chrome
   ];
 
   fonts.enableDefaultPackages = true;
