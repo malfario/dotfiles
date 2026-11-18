@@ -63,7 +63,6 @@ in
   services.xserver.xkb = {
     layout = "us";
     variant = "mac";
-    model = "applealu_iso";
   };
 
   environment.systemPackages = with pkgs; [
