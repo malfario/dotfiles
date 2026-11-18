@@ -19,7 +19,12 @@ in
     ];
   };
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      carapace _carapace fish | source
+    '';
+  };
 
   programs.nh = {
     enable = true;
