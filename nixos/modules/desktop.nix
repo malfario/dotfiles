@@ -1,5 +1,7 @@
 { pkgs, umbriel, noctalia, ... }:
-
+let
+  ghostty-wrapped = pkgs.callPackage ../../pkgs/ghostty-wrapped.nix { };
+in
 {
   imports = [
     umbriel.nixosModules.default
@@ -68,7 +70,6 @@
     ripgrep
     firefox
     carapace
-    ghostty
     zellij
     fishPlugins.hydro
     fishPlugins.fzf-fish
@@ -76,6 +77,7 @@
     claude-code
     chromium
     google-chrome
+    ghostty-wrapped
   ];
 
   fonts.enableDefaultPackages = true;
