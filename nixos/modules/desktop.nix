@@ -1,4 +1,4 @@
-{ pkgs, umbriel, noctalia, ... }:
+{ pkgs, umbriel, noctalia, zen-browser, ... }:
 let
   ghostty-wrapped = pkgs.callPackage ../../pkgs/ghostty-wrapped.nix { };
 in
@@ -82,6 +82,7 @@ in
     chromium
     google-chrome
     ghostty-wrapped
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   fonts.enableDefaultPackages = true;

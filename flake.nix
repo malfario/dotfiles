@@ -19,14 +19,14 @@
     hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
-  outputs = { self, nixpkgs, umbriel, noctalia, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, umbriel, noctalia, home-manager, zen-browser, ... } @ inputs:
   {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         specialArgs = {
-          inherit umbriel noctalia;
+          inherit umbriel noctalia zen-browser inputs;
         };
 
         modules = [
