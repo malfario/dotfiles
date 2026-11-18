@@ -85,11 +85,4 @@
 
   # Versión de compatibilidad del sistema
   system.stateVersion = "26.05";
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/rleblic/dotfiles";
-  };
 }
