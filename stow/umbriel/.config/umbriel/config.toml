@@ -7,6 +7,9 @@
 #
 # Commented settings below are examples, not built-in defaults.
 
+[environment]
+GTK_IM_MODULE = "simple"
+
 # ==============================================================================
 # Includes
 

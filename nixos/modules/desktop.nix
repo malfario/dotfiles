@@ -1,7 +1,5 @@
 { pkgs, umbriel, noctalia, zen-browser, ... }:
-let
-  ghostty-wrapped = pkgs.callPackage ../../pkgs/ghostty-wrapped.nix { };
-in
+
 {
   imports = [
     umbriel.nixosModules.default
@@ -81,7 +79,7 @@ in
     claude-code
     chromium
     google-chrome
-    ghostty-wrapped
+    ghostty
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
