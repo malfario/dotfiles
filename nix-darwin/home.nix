@@ -16,7 +16,6 @@
     p7zip-rar
     ghostty-bin
     doggo
-    pi-coding-agent
     uv
     skopeo
   ];
