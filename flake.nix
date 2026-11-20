@@ -45,7 +45,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.rleblic.imports = [
-              ./home.nix
+              ./home/users/rleblic/home.nix
             ];
             home-manager.extraSpecialArgs = {
               inherit inputs;
@@ -64,7 +64,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         modules = [
-          ./nixos/hosts/desktop/home.nix
+          ./home/users/rleblic/home.nix
         ];
       };
     };

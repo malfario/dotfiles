@@ -26,7 +26,11 @@
   programs.zen-browser.enable = true;
 
   programs.lazygit.enable = true;
-  programs.yazi.enable = true;
+
+  programs.yazi = {
+    enable = true;
+    shellWrapperName = "y";
+  };
 
   programs.fd.enable = true;
   programs.fzf.enable = true;
