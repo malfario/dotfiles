@@ -27,7 +27,7 @@ files = []
 # https://docs.noctalia.dev/umbriel/configuration/#general
 #
 [general]
-autostart = ["noctalia", "kitty"]
+autostart = ["noctalia", "ghostty"]
 # xwayland = false
 # Sharp X11 apps and games on scaled outputs; they see physical resolutions.
 # xwayland_native_resolution = true
@@ -181,7 +181,7 @@ numlock_toggle = true
 [keybinds]
 
 # Applications and session
-"Mod+Return" = { action = "spawn kitty", repeat = false }
+"Mod+Return" = { action = "spawn ghostty", repeat = false }
 "Mod" = "spawn noctalia msg panel-toggle launcher"
 "Mod+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
