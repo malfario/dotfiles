@@ -34,8 +34,8 @@
     ./programs/zoxide.nix
     ./programs/atuin.nix
     ./programs/aerospace.nix
-    ./programs/zellij.nix
-    ./programs/kitty.nix
+    # ./programs/zellij.nix
+    # ./programs/kitty.nix
     ./programs/hunk.nix
     ./programs/jujutsu.nix
     ./programs/television.nix
