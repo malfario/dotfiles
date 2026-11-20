@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  nixosMaintainerSkill =
+    ../../hermes/skills/nixos-maintainer;
+in
 {
   services.hermes-agent = {
     enable = true;
@@ -50,9 +54,19 @@
         provider = "openai-codex";
         default = "gpt-6.1-sol";
       };
+
+      skills = {
+        external_dirs = [
+          "/etc/hermes/skills"
+        ];
+      };
     };
 
     restart = "always";
     restartSec = 5;
   };
+
+  # Skills declarativas gestionadas por NixOS
+  environment.etc."hermes/skills/nixos-maintainer".source =
+    ../../hermes/skills/nixos-maintainer;
 }
