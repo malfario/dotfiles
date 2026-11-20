@@ -1,2 +1,8 @@
 --target=~/.config
 --ignore=.stowrc
+--ignore=flake.nix
+--ignore=flake.lock
+--ignore=nixos
+--ignore=nix-darwin
+--ignore=home
+--ignore=pkgs
