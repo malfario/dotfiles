@@ -85,5 +85,4 @@
 
   # Versión de compatibilidad del sistema
   system.stateVersion = "26.05";
-  system.nixos.label = "hermes-test";
 }
