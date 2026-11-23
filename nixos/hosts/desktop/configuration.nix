@@ -8,6 +8,7 @@
     ../../modules/desktop.nix
     ../../modules/virtualization/vfio.nix
     ../../modules/virtualization/libvirt.nix
+    ../../modules/virtualization/docker.nix
     ../../modules/vendor-reset.nix
     ../../modules/hermes.nix
   ];
