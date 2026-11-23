@@ -10,7 +10,7 @@
     openFirewall = false;
     settings = {
       PermitRootLogin = "no";
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       AllowUsers = [ "rleblic@172.26.0.0/24" ];
     };

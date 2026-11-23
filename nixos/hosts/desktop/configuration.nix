@@ -28,6 +28,10 @@
       "libvirtd"
     ];
     shell = pkgs.fish;
+
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHEkqWnc2m8i5Cl6wr9zhYvzK12+7mg7+g16v+fde+4J rleblic@Mac-Mini-de-Rafa.local"
+    ];
   };
 
   users.mutableUsers = true;
