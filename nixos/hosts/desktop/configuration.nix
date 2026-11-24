@@ -11,6 +11,7 @@
     ../../modules/virtualization/docker.nix
     ../../modules/vendor-reset.nix
     ../../modules/hermes.nix
+    ../../modules/tailscale.nix
   ];
 
   # Localización
