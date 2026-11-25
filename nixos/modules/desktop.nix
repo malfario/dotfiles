@@ -1,4 +1,4 @@
-{ pkgs, umbriel, noctalia, zen-browser, ... }:
+{ inputs, pkgs, umbriel, noctalia, zen-browser, ... }:
 
 {
   imports = [
@@ -63,25 +63,30 @@
     variant = "mac";
   };
 
-  environment.systemPackages = with pkgs; [
-    kitty
-    xwayland
-    wl-clipboard
-    xdg-utils
-    stow
-    ripgrep
-    firefox
-    carapace
-    zellij
-    fishPlugins.hydro
-    fishPlugins.fzf-fish
-    fzf
-    claude-code
-    chromium
-    google-chrome
-    ghostty
-    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+  environment.systemPackages =
+    with pkgs;
+    with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+    [
+      kitty
+      xwayland
+      wl-clipboard
+      xdg-utils
+      stow
+      ripgrep
+      firefox
+      carapace
+      zellij
+      fishPlugins.hydro
+      fishPlugins.fzf-fish
+      fzf
+      chromium
+      google-chrome
+      ghostty
+      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      tuios
+      claude-code
+      jujutsu
+    ];
 
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
