@@ -20,15 +20,13 @@
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
-  outputs = { self, nixpkgs, umbriel, noctalia, home-manager, zen-browser, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
   {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        specialArgs = {
-          inherit umbriel noctalia zen-browser inputs;
-        };
+        specialArgs = { inherit inputs; };
 
         modules = [
           inputs.hermes-agent.nixosModules.default

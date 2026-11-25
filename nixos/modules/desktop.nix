@@ -1,9 +1,14 @@
-{ inputs, pkgs, umbriel, noctalia, zen-browser, ... }:
+{ inputs, pkgs, ... }:
 
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  llm-agents = inputs.llm-agents.packages.${system};
+  zen-browser = inputs.zen-browser.packages.${system};
+in
 {
   imports = [
-    umbriel.nixosModules.default
-    noctalia.nixosModules.default
+    inputs.umbriel.nixosModules.default
+    inputs.noctalia.nixosModules.default
     ./media.nix
     ./plex.nix
   ];
@@ -63,30 +68,27 @@
     variant = "mac";
   };
 
-  environment.systemPackages =
-    with pkgs;
-    with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
-    [
-      kitty
-      xwayland
-      wl-clipboard
-      xdg-utils
-      stow
-      ripgrep
-      firefox
-      carapace
-      zellij
-      fishPlugins.hydro
-      fishPlugins.fzf-fish
-      fzf
-      chromium
-      google-chrome
-      ghostty
-      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-      tuios
-      claude-code
-      jujutsu
-    ];
+  environment.systemPackages = with pkgs; [
+    kitty
+    xwayland
+    wl-clipboard
+    xdg-utils
+    stow
+    ripgrep
+    firefox
+    carapace
+    zellij
+    fishPlugins.hydro
+    fishPlugins.fzf-fish
+    fzf
+    chromium
+    google-chrome
+    ghostty
+    zen-browser.default
+    tuios
+    llm-agents.claude-code
+    jujutsu
+  ];
 
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
