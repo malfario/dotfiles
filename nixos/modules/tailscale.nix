@@ -33,7 +33,7 @@
     };
 
     script = ''
-      ${lib.getExe config.services.tailscale.package} serve --bg https / http://127.0.0.1:5800
+      ${lib.getExe config.services.tailscale.package} serve --bg http://127.0.0.1:5800
     '';
   };
 }
